@@ -1,0 +1,12 @@
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\bin\Debug\net8.0\Testamente.DataAccess.deps.json
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\bin\Debug\net8.0\Testamente.DataAccess.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\bin\Debug\net8.0\Testamente.DataAccess.pdb
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.AssemblyInfoInputs.cache
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.AssemblyInfo.cs
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.sourcelink.json
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\refint\Testamente.DataAccess.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.pdb
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\ref\Testamente.DataAccess.dll

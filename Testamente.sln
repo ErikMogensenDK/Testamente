@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.DataAccess", "Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.DataAccessTests", "Testamente.DataAccessTests\Testamente.DataAccessTests.csproj", "{DABE57D2-71BB-4753-9F42-110928899F95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.Query", "Testamente.Query\Testamente.Query.csproj", "{C8720F61-0CEB-440A-A21A-3961BF5865B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.QueryTests", "Testamente.QueryTests\Testamente.QueryTests.csproj", "{1666E9B1-3196-4E4F-912D-725CDA671A3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{DABE57D2-71BB-4753-9F42-110928899F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DABE57D2-71BB-4753-9F42-110928899F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DABE57D2-71BB-4753-9F42-110928899F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8720F61-0CEB-440A-A21A-3961BF5865B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8720F61-0CEB-440A-A21A-3961BF5865B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8720F61-0CEB-440A-A21A-3961BF5865B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8720F61-0CEB-440A-A21A-3961BF5865B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1666E9B1-3196-4E4F-912D-725CDA671A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1666E9B1-3196-4E4F-912D-725CDA671A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1666E9B1-3196-4E4F-912D-725CDA671A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1666E9B1-3196-4E4F-912D-725CDA671A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
