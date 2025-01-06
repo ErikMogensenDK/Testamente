@@ -393,11 +393,24 @@
       "Testamente.App/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Testamente.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Testamente.App.dll": {}
         },
         "runtime": {
           "bin/placeholder/Testamente.App.dll": {}
+        }
+      },
+      "Testamente.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Testamente.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Testamente.Domain.dll": {}
         }
       }
     }
@@ -1001,6 +1014,11 @@
       "type": "project",
       "path": "../Testamente.App/Testamente.App.csproj",
       "msbuildProject": "../Testamente.App/Testamente.App.csproj"
+    },
+    "Testamente.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Testamente.Domain/Testamente.Domain.csproj",
+      "msbuildProject": "../Testamente.Domain/Testamente.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
