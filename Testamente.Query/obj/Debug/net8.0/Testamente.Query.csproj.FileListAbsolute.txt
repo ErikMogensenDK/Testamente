@@ -1,0 +1,12 @@
+C:\Users\erikm\repos\Testamente\Testamente.Query\bin\Debug\net8.0\Testamente.Query.deps.json
+C:\Users\erikm\repos\Testamente\Testamente.Query\bin\Debug\net8.0\Testamente.Query.dll
+C:\Users\erikm\repos\Testamente\Testamente.Query\bin\Debug\net8.0\Testamente.Query.pdb
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.AssemblyInfoInputs.cache
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.AssemblyInfo.cs
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.csproj.CoreCompileInputs.cache
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.sourcelink.json
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.dll
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\refint\Testamente.Query.dll
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.pdb
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\ref\Testamente.Query.dll

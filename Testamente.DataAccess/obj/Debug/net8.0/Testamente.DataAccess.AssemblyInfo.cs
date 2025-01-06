@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Testamente.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52efc5466e28e0a666e3b40e8f5aae5834bbcb05")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+956a88a0507d8e21c1845d479cdc4b97d344a874")]
 [assembly: System.Reflection.AssemblyProductAttribute("Testamente.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Testamente.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.Query", "Testame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.QueryTests", "Testamente.QueryTests\Testamente.QueryTests.csproj", "{1666E9B1-3196-4E4F-912D-725CDA671A3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.App", "Testamente.App\Testamente.App.csproj", "{B58FA5CD-47D7-476F-AD54-B6F152EDED45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.AppTests", "Testamente.AppTests\Testamente.AppTests.csproj", "{A022FFAD-668B-4107-8550-821E4B523B76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{1666E9B1-3196-4E4F-912D-725CDA671A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1666E9B1-3196-4E4F-912D-725CDA671A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1666E9B1-3196-4E4F-912D-725CDA671A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B58FA5CD-47D7-476F-AD54-B6F152EDED45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58FA5CD-47D7-476F-AD54-B6F152EDED45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58FA5CD-47D7-476F-AD54-B6F152EDED45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58FA5CD-47D7-476F-AD54-B6F152EDED45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A022FFAD-668B-4107-8550-821E4B523B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A022FFAD-668B-4107-8550-821E4B523B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A022FFAD-668B-4107-8550-821E4B523B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A022FFAD-668B-4107-8550-821E4B523B76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
