@@ -1,0 +1,12 @@
+C:\Users\erikm\repos\Testamente\Testamente.Domain\bin\Debug\net8.0\Testamente.Domain.deps.json
+C:\Users\erikm\repos\Testamente\Testamente.Domain\bin\Debug\net8.0\Testamente.Domain.dll
+C:\Users\erikm\repos\Testamente\Testamente.Domain\bin\Debug\net8.0\Testamente.Domain.pdb
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.AssemblyInfoInputs.cache
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.AssemblyInfo.cs
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.csproj.CoreCompileInputs.cache
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.sourcelink.json
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.dll
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\refint\Testamente.Domain.dll
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.pdb
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\ref\Testamente.Domain.dll
