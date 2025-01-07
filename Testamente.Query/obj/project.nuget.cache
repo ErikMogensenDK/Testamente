@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XpWZybgCljM=",
+  "dgSpecHash": "jVVVLQyq8eg=",
   "success": true,
   "projectFilePath": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Query\\Testamente.Query.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\erikm\\.nuget\\packages\\htmlagilitypack\\1.11.72\\htmlagilitypack.1.11.72.nupkg.sha512"
+  ],
   "logs": []
 }

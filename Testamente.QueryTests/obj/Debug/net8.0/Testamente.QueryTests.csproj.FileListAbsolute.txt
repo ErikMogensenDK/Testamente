@@ -113,3 +113,8 @@ C:\Users\erikm\repos\Testamente\Testamente.QueryTests\obj\Debug\net8.0\refint\Te
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\obj\Debug\net8.0\Testamente.QueryTests.pdb
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\obj\Debug\net8.0\Testamente.QueryTests.genruntimeconfig.cache
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\obj\Debug\net8.0\ref\Testamente.QueryTests.dll
+C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\HtmlAgilityPack.dll
+C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\Testamente.DataAccess.dll
+C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\Testamente.Domain.dll
+C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\Testamente.DataAccess.pdb
+C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\Testamente.Domain.pdb

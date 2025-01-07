@@ -1,0 +1,16 @@
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.App.deps.json
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.App.dll
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.App.pdb
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.Domain.dll
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.Domain.pdb
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.csproj.AssemblyReference.cache
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.AssemblyInfoInputs.cache
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.AssemblyInfo.cs
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.csproj.CoreCompileInputs.cache
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.sourcelink.json
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamen.1E2BB970.Up2Date
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.dll
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\refint\Testamente.App.dll
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.pdb
+C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\ref\Testamente.App.dll

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SMsCgkP7jgE=",
+  "dgSpecHash": "j/e0h+kEVm0=",
   "success": true,
   "projectFilePath": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.DataAccess\\Testamente.DataAccess.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\erikm\\.nuget\\packages\\htmlagilitypack\\1.11.72\\htmlagilitypack.1.11.72.nupkg.sha512"
+  ],
   "logs": []
 }

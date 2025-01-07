@@ -10,3 +10,9 @@ C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Que
 C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\refint\Testamente.Query.dll
 C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.pdb
 C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\ref\Testamente.Query.dll
+C:\Users\erikm\repos\Testamente\Testamente.Query\bin\Debug\net8.0\Testamente.DataAccess.dll
+C:\Users\erikm\repos\Testamente\Testamente.Query\bin\Debug\net8.0\Testamente.Domain.dll
+C:\Users\erikm\repos\Testamente\Testamente.Query\bin\Debug\net8.0\Testamente.DataAccess.pdb
+C:\Users\erikm\repos\Testamente\Testamente.Query\bin\Debug\net8.0\Testamente.Domain.pdb
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamente.Query.csproj.AssemblyReference.cache
+C:\Users\erikm\repos\Testamente\Testamente.Query\obj\Debug\net8.0\Testamen.BE8721A9.Up2Date

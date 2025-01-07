@@ -10,3 +10,4 @@ C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Do
 C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\refint\Testamente.Domain.dll
 C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.pdb
 C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\ref\Testamente.Domain.dll
+C:\Users\erikm\repos\Testamente\Testamente.Domain\obj\Debug\net8.0\Testamente.Domain.csproj.AssemblyReference.cache

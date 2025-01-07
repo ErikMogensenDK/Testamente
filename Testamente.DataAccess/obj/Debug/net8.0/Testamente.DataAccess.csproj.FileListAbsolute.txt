@@ -10,3 +10,7 @@ C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testament
 C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\refint\Testamente.DataAccess.dll
 C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.pdb
 C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\ref\Testamente.DataAccess.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\bin\Debug\net8.0\Testamente.Domain.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\bin\Debug\net8.0\Testamente.Domain.pdb
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamente.DataAccess.csproj.AssemblyReference.cache
+C:\Users\erikm\repos\Testamente\Testamente.DataAccess\obj\Debug\net8.0\Testamen.51844A1B.Up2Date

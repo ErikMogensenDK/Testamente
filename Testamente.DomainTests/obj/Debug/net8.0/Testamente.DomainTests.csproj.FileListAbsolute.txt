@@ -113,3 +113,4 @@ C:\Users\erikm\repos\Testamente\Testamente.DomainTests\obj\Debug\net8.0\refint\T
 C:\Users\erikm\repos\Testamente\Testamente.DomainTests\obj\Debug\net8.0\Testamente.DomainTests.pdb
 C:\Users\erikm\repos\Testamente\Testamente.DomainTests\obj\Debug\net8.0\Testamente.DomainTests.genruntimeconfig.cache
 C:\Users\erikm\repos\Testamente\Testamente.DomainTests\obj\Debug\net8.0\ref\Testamente.DomainTests.dll
+C:\Users\erikm\repos\Testamente\Testamente.DomainTests\bin\Debug\net8.0\HtmlAgilityPack.dll
