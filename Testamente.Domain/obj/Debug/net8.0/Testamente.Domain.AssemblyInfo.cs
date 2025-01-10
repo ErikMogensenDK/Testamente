@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Testamente.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0db9d5f6f0058b80efb03d2ed9a0e517a46757be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dec8eca1852400fa175ff5cf3bd30d7c2136c393")]
 [assembly: System.Reflection.AssemblyProductAttribute("Testamente.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Testamente.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

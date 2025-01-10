@@ -1,9 +1,3 @@
-
-
-
-
-
-
 namespace Testamente.Domain;
 
 public class InheritanceCalculator
@@ -13,12 +7,12 @@ public class InheritanceCalculator
 		
 	}
 
-	public Dictionary<Heir, double> CalculateInheritance(double inheritance, List<Heir> heirs)
+	public List<Heir> CalculateInheritance(double inheritance, Node testatorNode)
 	{
-		if (heirs == null || heirs.Count == 0)
+		if (testatorNode == null || testatorNode.Children == null)
 			return null;
 
-		Dictionary<Heir, double> inheritanceDictionary = CreateInitialInheritanceDictionary(heirs);
+		Dictionary<Heir, double> inheritanceDictionary = CreateInitialInheritanceDictionary(testatorNode);
 
 		int numberOfForcedHeirs = CountNumberOfForcedHeirs(heirs);
 		if (numberOfForcedHeirs > 0)
