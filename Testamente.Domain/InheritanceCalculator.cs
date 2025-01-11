@@ -1,3 +1,6 @@
+
+
+
 namespace Testamente.Domain;
 
 public class InheritanceCalculator
@@ -7,82 +10,167 @@ public class InheritanceCalculator
 		
 	}
 
-	public List<Heir> CalculateInheritance(double inheritance, Node testatorNode)
+	public Dictionary<Person, double> CalculateInheritance(double inheritance, Testator testator)
 	{
-		if (testatorNode == null || testatorNode.Children == null)
+		Dictionary<Person, double> inheritanceDict = new();
+		if (testator == null)
 			return null;
 
-		Dictionary<Heir, double> inheritanceDictionary = CreateInitialInheritanceDictionary(testatorNode);
+		// cases with first class heirs
 
-		int numberOfForcedHeirs = CountNumberOfForcedHeirs(heirs);
-		if (numberOfForcedHeirs > 0)
+		// No living spouse, but children
+		if (IsNullOrDead(testator.Spouse) && !IsNullOrEmpty(testator.Children))
 		{
-			double ForcedInheritance = 0.25 * inheritance;
-			inheritanceDictionary = SplitForcedInheritanceAmongForcedHeirs(ForcedInheritance, inheritanceDictionary, numberOfForcedHeirs);
-			inheritance = 0.75 * inheritance;
+			int numOfChildren = testator.Children.Count;
+			foreach (var child in testator.Children)
+			{
+				double inheritanceToAssign= inheritance/numOfChildren;
+				inheritanceDict = AssignInheritanceForAnyLivingDescendants(inheritanceDict, child, inheritanceToAssign, testator);
+			}
+			return inheritanceDict;
 		}
 
-		int numberOfFreeHeirs = CountNumberOfFreeHeirs(heirs);
-		if (numberOfFreeHeirs > 0)
+		// Spouse and Children
+		if (!IsNullOrDead(testator.Spouse) && !IsNullOrEmpty(testator.Children)) 
 		{
-			inheritanceDictionary = SplitFreeInheritanceEvenly(inheritance, inheritanceDictionary, numberOfFreeHeirs);
+			int numOfChildren = testator.Children.Count;
+			inheritanceDict[testator.Spouse] = inheritance/2;
+			foreach (var child in testator.Children)
+			{
+				inheritanceDict[child] = (inheritance / 2) / numOfChildren;
+			}
+			return inheritanceDict;
 		}
 
-		return inheritanceDictionary;
+		//Spouse and No Children
+		if (!IsNullOrDead(testator.Spouse) && IsNullOrEmpty(testator.Children)) 
+		{
+			inheritanceDict[testator.Spouse] = inheritance;
+			return inheritanceDict;
+		}
+
+		// 2nd inheritance class
+
+		// TwoParents Alive
+		if (testator.Father != null && testator.Mother != null)
+		{
+			inheritanceDict[testator.Father] = inheritance/2;
+			inheritanceDict[testator.Mother] = inheritance/2;
+			return inheritanceDict;
+		}
+
+		// Only Father Alive, no siblings
+		if (!IsNullOrDead(testator.Father) && IsNullOrEmpty(testator.Father?.Children) && IsNullOrDead(testator.Mother) && IsNullOrEmpty(testator.Mother?.Children)) 
+		{
+			inheritanceDict[testator.Father] = inheritance;
+			return inheritanceDict;
+		}
+
+		// Only Mother Alive, no siblings
+		if (IsNullOrDead(testator.Father) && !IsNullOrDead(testator.Mother) && IsNullOrEmpty(testator.Father?.Children) && IsNullOrEmpty(testator.Mother?.Children))
+		{
+			inheritanceDict[testator.Mother] = inheritance;
+			return inheritanceDict;
+		}
+
+		List<Person> siblingsAndHalfSiblings = GetSiblingsAndHalfSiblingsIfAny(testator);
+		// Only Father alive, with siblings
+		if (!IsNullOrDead(testator.Father) && IsNullOrDead(testator.Mother) && siblingsAndHalfSiblings.Count > 0)
+		{
+			inheritanceDict[testator.Father] = inheritance / 2;
+			int numOfSiblings = siblingsAndHalfSiblings.Count;
+			foreach (var sibling in siblingsAndHalfSiblings)
+			{
+				inheritanceDict[sibling] = (inheritance / 2) / numOfSiblings;
+			}
+			return inheritanceDict;
+		}
+
+		// Only Mother alive, with siblings
+		if (IsNullOrDead(testator.Father) && !IsNullOrDead(testator.Mother) && siblingsAndHalfSiblings.Count > 0)
+		{
+			inheritanceDict[testator.Mother] = inheritance / 2;
+			int numOfSiblings = siblingsAndHalfSiblings.Count;
+			foreach (var sibling in siblingsAndHalfSiblings)
+			{
+				inheritanceDict[sibling] = (inheritance / 2) / numOfSiblings;
+			}
+			return inheritanceDict;
+		}
+
+		// No parents but siblings
+		if (IsNullOrDead(testator.Father) && IsNullOrDead(testator.Mother) && siblingsAndHalfSiblings.Count > 0)
+		{
+			int numOfSiblings = siblingsAndHalfSiblings.Count;
+			foreach (var sibling in siblingsAndHalfSiblings)
+			{
+				inheritanceDict[sibling] = inheritance / numOfSiblings;
+			}
+			return inheritanceDict;
+		}
+
+		//If no living relatives, inheritance goes to the state
+		Person person = new(){Name = "Den Danske Stat"};
+		inheritanceDict[person] = inheritance;
+		return inheritanceDict;
 	}
 
-    private Dictionary<Heir, double> SplitFreeInheritanceEvenly(double inheritance, Dictionary<Heir, double> inheritanceDictionary, int numberOfFreeHeirs)
+    private List<Person> GetSiblingsAndHalfSiblingsIfAny(Testator testator)
     {
-		double splitOfInheritance = inheritance/ numberOfFreeHeirs;
-		foreach (var heir in inheritanceDictionary.Keys)
+		List<Person> siblings = new();
+		if (testator.Father != null && testator.Father.Children?.Count > 0)
 		{
-			if (heir.IsFreeHeir)
-				inheritanceDictionary[heir] += splitOfInheritance;
+			foreach (var child in testator.Father.Children)
+			{
+				if (child.PersonId != testator.PersonId)
+				{
+					siblings.Add(child);
+				}
+			}
 		}
-		return inheritanceDictionary;
+		if (testator.Mother != null && testator.Mother.Children?.Count > 0)
+		{
+			foreach (var child in testator.Mother.Children)
+			{
+				if (child.PersonId != testator.PersonId)
+				{
+					siblings.Add(child);
+				}
+			}
+		}
+		return siblings;;
     }
 
-    private int CountNumberOfFreeHeirs(List<Heir> heirs)
+    private Dictionary<Person, double> AssignInheritanceForAnyLivingDescendants(Dictionary<Person, double> inheritanceDict, Person heir, double inheritanceToAssign, Person testator)
     {
-		int numOfHeirs = 0;
-		foreach (var heir in heirs)
+		if (heir.IsAlive == true && heir.PersonId != testator.PersonId)
 		{
-			if (heir.IsFreeHeir)
-				numOfHeirs ++;
+			inheritanceDict[heir] = inheritanceToAssign;
+			return inheritanceDict;
 		}
-		return numOfHeirs;
+		else if (heir.Children != null && heir.Children.Count > 0)
+		{
+			int numOfChildren = heir.Children.Count;
+			double updatedInheritanceShare= inheritanceToAssign/numOfChildren;
+			foreach(var child in heir.Children)
+			{
+				AssignInheritanceForAnyLivingDescendants(inheritanceDict, child, updatedInheritanceShare, testator);
+			}
+		}
+		return inheritanceDict;
     }
-
-    private Dictionary<Heir, double> SplitForcedInheritanceAmongForcedHeirs(double forcedInheritance, Dictionary<Heir, double>inheritanceDictionary, int numberOfForcedHeirs)
-    {
-		double splitOfInheritance = forcedInheritance / numberOfForcedHeirs;
-		foreach (var heir in inheritanceDictionary.Keys)
-		{
-			if (heir.IsForcedHeir)
-				inheritanceDictionary[heir] += splitOfInheritance;
-		}
-		return inheritanceDictionary;
+	private bool IsNullOrDead(Person person)
+	{
+		if (person == null || person.IsAlive == false)
+			return true;
+		else
+			return false;
 	}
-
-	private Dictionary<Heir, double> CreateInitialInheritanceDictionary(List<Heir> heirs)
-    {
-		Dictionary<Heir, double> inheritanceDictionary = new();
-		foreach(var heir in heirs)
-		{
-			inheritanceDictionary[heir] = 0.0;
-		}
-		return inheritanceDictionary;
-    }
-
-
-    private int CountNumberOfForcedHeirs(List<Heir> heirs)
-    {
-		int numOfHeirs = 0;
-		foreach (var heir in heirs)
-		{
-			if (heir.IsForcedHeir)
-				numOfHeirs ++;
-		}
-		return numOfHeirs;
-    }
+	private bool IsNullOrEmpty(List<Person> people)
+	{
+		if (people == null || people.Count < 1)
+			return true;
+		else
+			return false;
+	}
 }
