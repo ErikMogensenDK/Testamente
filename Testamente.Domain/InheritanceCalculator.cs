@@ -108,6 +108,41 @@ public class InheritanceCalculator
 			}
 			return inheritanceDict;
 		}
+		// No SecondClassInheritants!
+		// Check if thirdClassInheritants
+		if(!IsNullOrEmpty(testator.Grandparents))
+		{
+			// Add any grandparents to lists
+			List<Person> inheritingGrandparents= testator.Grandparents.Where(x => x.IsAlive).ToList();
+			List<Person> deadGrandparents = testator.Grandparents.Where(x => !x.IsAlive).ToList();
+			int numOfDeadGrandparentsWithoutChildren = 0;
+			//Count number of dead grandparents without living children (these nephews/nieces should NOT inherit)
+			for(int i = 0; i<deadGrandparents.Count; i++)
+			{
+				if(IsNullOrEmpty(deadGrandparents[i].Children))
+				{
+					continue;
+				}
+				inheritingGrandparents.Add(deadGrandparents[i]);
+			}
+			double inheritanceSplit = inheritance / inheritingGrandparents.Count;
+			foreach(var grandparent in inheritingGrandparents)
+			{
+				if (!IsNullOrDead(grandparent))
+				{
+					inheritanceDict[grandparent] = inheritanceSplit;
+				}
+				else
+				{
+					int numOfChildren = grandparent.Children.Count;
+					foreach(var child in grandparent.Children)
+					{
+						inheritanceDict[child] = inheritanceSplit/numOfChildren;
+					}
+				}
+			}
+			return inheritanceDict;
+		}
 
 		//If no living relatives, inheritance goes to the state
 		Person person = new(){Name = "Den Danske Stat"};

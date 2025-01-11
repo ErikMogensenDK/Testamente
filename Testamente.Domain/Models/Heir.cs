@@ -20,10 +20,7 @@ public class Testator: Person
 	public Person Spouse { get; set; }
 	public Person Father { get; set; }
 	public Person Mother { get; set; }
-	public Person MothersFather { get; set; }
-	public Person MothersMother{ get; set; }
-	public Person FathersFather { get; set; }
-	public Person FathersMother { get; set; }
+	public List<Person> Grandparents { get; set; }
 }
 
 public enum TypeOfRelative

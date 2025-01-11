@@ -292,7 +292,6 @@ public class InheritanceCalculatorTests
 		List<Person> actualHeirs = new();
 		foreach (var heir in inheritanceDict.Keys)
 		{
-			Console.WriteLine(heir.Name);
 			actualHeirs.Add(heir);
 		}
 		//Assert
@@ -304,7 +303,62 @@ public class InheritanceCalculatorTests
 		Assert.AreEqual(expectedShareChildren, inheritanceDict[actualHeirs[2]]);
 		Assert.AreEqual(deceasedChild.Children[1].Name, actualHeirs[2].Name);
 	}
-	//Nevøer/niecer?
-	//Bedsteforældre
-	// Er det bedre med liste af "relatives?", og en relative-enum?
+	[TestMethod]
+	public void Calculate_returnsExpectedResultsWithNoSecondClassHeirsAnd2AliveGrandParentsAndOneDead()
+	{
+		//Arrange
+		double expectedShare = 0.5;
+		Testator testator = new() { PersonId = 1 };
+		Person grandparentOne= new() { PersonId = 2, Name = "GrandParentOne" };
+		Person grandparentTwo = new() { PersonId = 3, Name = "GrandParentTwo", IsAlive = false };
+		Person grandparentThree = new() { PersonId = 3, Name = "GrandParentThree" };
+		testator.Grandparents = new() { grandparentOne, grandparentTwo, grandparentThree };
+		InheritanceCalculator calculator = new();
+		//Act
+		Dictionary<Person, double> inheritanceDict = calculator.CalculateInheritance(1, testator);
+		List<Person> actualHeirs = new();
+		foreach (var heir in inheritanceDict.Keys)
+		{
+			Console.WriteLine(heir.Name);
+			actualHeirs.Add(heir);
+		}
+		//Assert
+		Assert.AreEqual(2, actualHeirs.Count);
+		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[0]]);
+		Assert.AreEqual(grandparentOne.Name, actualHeirs[0].Name);
+		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[1]]);
+		Assert.AreEqual(grandparentThree.Name, actualHeirs[1].Name);
+	}
+	[TestMethod]
+	public void Calculate_returnsExpectedResultsWithNoSecondClassHeirsAnd3AliveGrandParentsAndOneDeadWith1Child()
+	{
+		//Arrange
+		double expectedShare = 0.25;
+		Testator testator = new() { PersonId = 1 };
+		Person grandparentOne= new() { PersonId = 2, Name = "GrandParentOne" };
+		Person grandparentTwo = new() { PersonId = 3, Name = "GrandParentTwo"};
+		Person grandparentThree= new() { PersonId = 4, Name = "GrandParentFour", Children = new() { new() { Name="ChildName", PersonId = 5 } } };
+		Person grandparentFour = new() { PersonId = 6, Name = "GrandParentFour", IsAlive = false, Children = new() { new() { Name="ChildNameTwo", PersonId = 7 } } };
+		testator.Grandparents = new() { grandparentOne, grandparentTwo, grandparentThree, grandparentFour };
+		InheritanceCalculator calculator = new();
+		//Act
+		Dictionary<Person, double> inheritanceDict = calculator.CalculateInheritance(1, testator);
+		List<Person> actualHeirs = new();
+		foreach (var heir in inheritanceDict.Keys)
+		{
+			Console.WriteLine(heir.Name);
+			actualHeirs.Add(heir);
+		}
+		//Assert
+		Assert.AreEqual(4, actualHeirs.Count);
+		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[0]]);
+		Assert.AreEqual(grandparentOne.Name, actualHeirs[0].Name);
+		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[1]]);
+		Assert.AreEqual(grandparentTwo.Name, actualHeirs[1].Name);
+		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[2]]);
+		Assert.AreEqual(grandparentThree.Name, actualHeirs[2].Name);
+		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[2]]);
+		Assert.AreEqual(grandparentFour.Children[0].Name, actualHeirs[3].Name);
+		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[3]]);
+	}
 }
