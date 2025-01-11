@@ -1,6 +1,8 @@
 
 
 
+
+
 namespace Testamente.Domain;
 
 public class InheritanceCalculator
@@ -17,37 +19,9 @@ public class InheritanceCalculator
 			return null;
 
 		// cases with first class heirs
-
-		// No living spouse, but children
-		if (IsNullOrDead(testator.Spouse) && !IsNullOrEmpty(testator.Children))
-		{
-			int numOfChildren = testator.Children.Count;
-			foreach (var child in testator.Children)
-			{
-				double inheritanceToAssign= inheritance/numOfChildren;
-				inheritanceDict = AssignInheritanceForAnyLivingDescendants(inheritanceDict, child, inheritanceToAssign, testator);
-			}
+		inheritanceDict = SplitAmongFirstClassInheritantsIfAny(inheritance, testator);
+		if (inheritanceDict.Count>0)
 			return inheritanceDict;
-		}
-
-		// Spouse and Children
-		if (!IsNullOrDead(testator.Spouse) && !IsNullOrEmpty(testator.Children)) 
-		{
-			int numOfChildren = testator.Children.Count;
-			inheritanceDict[testator.Spouse] = inheritance/2;
-			foreach (var child in testator.Children)
-			{
-				inheritanceDict[child] = (inheritance / 2) / numOfChildren;
-			}
-			return inheritanceDict;
-		}
-
-		//Spouse and No Children
-		if (!IsNullOrDead(testator.Spouse) && IsNullOrEmpty(testator.Children)) 
-		{
-			inheritanceDict[testator.Spouse] = inheritance;
-			return inheritanceDict;
-		}
 
 		// 2nd inheritance class
 
@@ -150,6 +124,42 @@ public class InheritanceCalculator
 		return inheritanceDict;
 	}
 
+    private Dictionary<Person, double> SplitAmongFirstClassInheritantsIfAny(double inheritance, Testator testator)
+    {
+		Dictionary<Person,double> inheritanceDict = new();
+		// No living spouse, but children
+		if (IsNullOrDead(testator.Spouse) && !IsNullOrEmpty(testator.Children))
+		{
+			int numOfChildren = testator.Children.Count;
+			foreach (var child in testator.Children)
+			{
+				double inheritanceToAssign= inheritance/numOfChildren;
+				inheritanceDict = AssignInheritanceForAnyLivingDescendants(inheritanceDict, child, inheritanceToAssign, testator);
+			}
+			return inheritanceDict;
+		}
+
+		// Spouse and Children
+		if (!IsNullOrDead(testator.Spouse) && !IsNullOrEmpty(testator.Children)) 
+		{
+			int numOfChildren = testator.Children.Count;
+			inheritanceDict[testator.Spouse] = inheritance/2;
+			foreach (var child in testator.Children)
+			{
+				inheritanceDict[child] = (inheritance / 2) / numOfChildren;
+			}
+			return inheritanceDict;
+		}
+
+		//Spouse and No Children
+		if (!IsNullOrDead(testator.Spouse) && IsNullOrEmpty(testator.Children)) 
+		{
+			inheritanceDict[testator.Spouse] = inheritance;
+			return inheritanceDict;
+		}
+		return new Dictionary<Person, double>();
+	}
+
     private List<Person> GetSiblingsAndHalfSiblingsIfAny(Testator testator)
     {
 		List<Person> siblings = new();
@@ -208,4 +218,9 @@ public class InheritanceCalculator
 		else
 			return false;
 	}
+
+    public Dictionary<Person, double> CalculateForcedInheritance(double inheritance, Testator testator)
+    {
+		return SplitAmongFirstClassInheritantsIfAny(0.25, testator);
+    }
 }

@@ -361,4 +361,35 @@ public class InheritanceCalculatorTests
 		Assert.AreEqual(grandparentFour.Children[0].Name, actualHeirs[3].Name);
 		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[3]]);
 	}
+
+	[TestMethod]
+	public void Calculate_CreatingAMinimumInheritanceSplitReturnsExpectedSplitForSpouseAnd2Children()
+	{
+		//Arrange
+		double expectedShareSpouse = 0.125;
+		double expectedShareChild= 0.0625;
+		Testator testator = new() { PersonId = 1 };
+		Person spouse = new() { PersonId = 2, Name = "Spouse" };
+		Person childOne = new() { PersonId = 3, Name = "ChildOne" };
+		Person childTwo = new() { PersonId = 4, Name = "SecondChild" };
+		testator.Spouse=spouse;
+		testator.Children = new(){childOne,childTwo};
+		InheritanceCalculator calculator = new();
+		//Act
+		Dictionary<Person, double> inheritanceDict = calculator.CalculateForcedInheritance(1.0, testator);
+		List<Person> actualHeirs = new();
+		foreach (var heir in inheritanceDict.Keys)
+		{
+			Console.WriteLine(heir.Name);
+			actualHeirs.Add(heir);
+		}
+		//Assert
+		Assert.AreEqual(3, actualHeirs.Count);
+		Assert.AreEqual(expectedShareSpouse, inheritanceDict[actualHeirs[0]]);
+		Assert.AreEqual(spouse.Name, actualHeirs[0].Name);
+		Assert.AreEqual(expectedShareChild, inheritanceDict[actualHeirs[1]]);
+		Assert.AreEqual(childOne.Name, actualHeirs[1].Name);
+		Assert.AreEqual(expectedShareChild, inheritanceDict[actualHeirs[2]]);
+		Assert.AreEqual(childTwo.Name, actualHeirs[2].Name);
+	}
 }
