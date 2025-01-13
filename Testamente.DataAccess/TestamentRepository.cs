@@ -12,26 +12,27 @@ public class TestamentRepo : IInheritanceSplitRepository, IPersonRepository, IRe
         if(split == null)
             throw new ArgumentNullException(nameof(split));
 
-        List<PersonEntity> inheritantsDtos = new ();
-        foreach (var inheritant in split.Inheritants.Keys)
-        {
-            inheritantsDtos.Add(new(){
-                PersonDtoId = inheritant.PersonId,
-                Name = inheritant.Name,
-                BirthDate = inheritant.BirthDate,
-                Address = inheritant.Address,
-                Children = new ()
+    //     List<PersonEntity> inheritantsDtos = new ();
+    //     foreach (var inheritant in split.Inheritants.Keys)
+    //     {
+    //         inheritantsDtos.Add(new(){
+    //             PersonDtoId = inheritant.PersonId,
+    //             Name = inheritant.Name,
+    //             BirthDate = inheritant.BirthDate,
+    //             Address = inheritant.Address,
+    //             Children = new ()
 
-	public List<PersonEntity> Children { get; set; }
-	public bool IsAlive { get; set; } = true;
-            })
-        }
-        var dbEntity = new InheritanceSplitDto
-        {
-            InheritanceSplitId = split.InheritanceSplitId,
-            Inheritants = split.Inheritants,
+	// public List<PersonEntity> Children { get; set; }
+	// public bool IsAlive { get; set; } = true;
+    //         }
+    //     }
+    //     var dbEntity = new InheritanceSplitDto
+    //     {
+    //         InheritanceSplitId = split.InheritanceSplitId,
+    //         Inheritants = split.Inheritants,
 
-        }
+    //     }
+    return Task.FromResult("");
     }
 
     public Task SaveCreateAsync(Person person)
