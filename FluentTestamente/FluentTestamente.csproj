@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <ItemGroup>
+    <ProjectReference Include="..\Testamente.App\Testamente.App.csproj" />
+    <ProjectReference Include="..\Testamente.DataAccess\Testamente.DataAccess.csproj" />
+    <ProjectReference Include="..\Testamente.Query\Testamente.Query.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>

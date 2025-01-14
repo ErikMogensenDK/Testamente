@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.Web", "Testamente.Web\Testamente.Web.csproj", "{7461AA6F-B65F-4443-8A05-0744FD6AE8D6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.Domain", "Testamente.Domain\Testamente.Domain.csproj", "{CAAA4BD8-099A-40B7-9A43-F15915F8EE8E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.DomainTests", "Testamente.DomainTests\Testamente.DomainTests.csproj", "{8FCD8991-66A3-4498-9E8D-0DD7E35D0612}"
@@ -20,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.App", "Testamente.App\Testamente.App.csproj", "{B58FA5CD-47D7-476F-AD54-B6F152EDED45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.AppTests", "Testamente.AppTests\Testamente.AppTests.csproj", "{A022FFAD-668B-4107-8550-821E4B523B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentTestamente", "FluentTestamente\FluentTestamente.csproj", "{DF7497F1-CB60-489C-BDE5-109F1AB951A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +63,10 @@ Global
 		{A022FFAD-668B-4107-8550-821E4B523B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A022FFAD-668B-4107-8550-821E4B523B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A022FFAD-668B-4107-8550-821E4B523B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF7497F1-CB60-489C-BDE5-109F1AB951A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF7497F1-CB60-489C-BDE5-109F1AB951A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF7497F1-CB60-489C-BDE5-109F1AB951A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF7497F1-CB60-489C-BDE5-109F1AB951A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
