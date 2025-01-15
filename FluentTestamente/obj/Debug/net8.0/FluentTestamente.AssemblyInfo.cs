@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluentTestamente")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf23986bcede15315cdc4fe3bf10b5a6a61375d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b7427c9a38b84d053f6999e4c55ef5401e0084a")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluentTestamente")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluentTestamente")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
