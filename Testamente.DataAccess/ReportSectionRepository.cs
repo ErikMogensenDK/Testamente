@@ -1,5 +1,4 @@
 using Testamente.Domain;
-using Microsoft.EntityFrameworkCore;
 
 namespace Testamente.DataAccess;
 
@@ -29,14 +28,4 @@ public class ReportSectionRepo : IReportSectionRepository
 		
 		await _context.SaveChangesAsync();
 	}
-}
-
-public class ReportSectionContext: DbContext
-{
-	public ReportSectionContext(DbContextOptions options) : base(options)
-	{
-
-	}
-
-	public DbSet<ReportSectionEntity> ReportSections { get; set; }
 }

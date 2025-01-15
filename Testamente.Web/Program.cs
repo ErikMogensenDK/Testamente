@@ -1,3 +1,6 @@
+using Testamente.DataAccess;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//services.AddScoped<IReportSectionService, ReportSectionService>();
+//services.AddScoped<IReportSectionRepo, ReportSectionRepo>();
+//services.AddScoped<IReportSectionPostQuery, ReportSectionPostQuery>();
+var connStr = builder.Configuration.GetValue<string>("DBCONNSTR");
+var services = builder.Services;
+services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
+//services.AddScoped<IDbConnectionProvider>(p => new DbConnectionProvider(connStr));
+//services.AddScoped<IQueryExecutor, QueryExecutor>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

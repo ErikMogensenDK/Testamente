@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.App", "Testament
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.AppTests", "Testamente.AppTests\Testamente.AppTests.csproj", "{A022FFAD-668B-4107-8550-821E4B523B76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentTestamente", "FluentTestamente\FluentTestamente.csproj", "{DF7497F1-CB60-489C-BDE5-109F1AB951A3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.Web", "Testamente.Web\Testamente.Web.csproj", "{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}"
 EndProject
 Global
