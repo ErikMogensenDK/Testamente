@@ -116,3 +116,14 @@ C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\obj\Debug\net8.0\ref\
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\HtmlAgilityPack.dll
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Testamente.Domain.dll
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Testamente.Domain.pdb
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

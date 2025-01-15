@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9gy66D20zQ4=",
+  "dgSpecHash": "nDULDB986jo=",
   "success": true,
   "projectFilePath": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj",
   "expectedPackageFiles": [
@@ -28,12 +28,5 @@
     "C:\\Users\\erikm\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0\\system.diagnostics.diagnosticsource.9.0.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://bleau.pkgs.visualstudio.com/_packaging/bleau%40Local/nuget/v3/index.json."
-    }
-  ]
+  "logs": []
 }
