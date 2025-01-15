@@ -1718,7 +1718,8 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://bleau.pkgs.visualstudio.com/_packaging/bleau%40Local/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -1781,5 +1782,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://bleau.pkgs.visualstudio.com/_packaging/bleau%40Local/nuget/v3/index.json."
+    }
+  ]
 }
