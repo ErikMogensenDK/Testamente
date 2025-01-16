@@ -15,7 +15,8 @@ var app = builder.Build();
 //services.AddScoped<IReportSectionPostQuery, ReportSectionPostQuery>();
 var connStr = builder.Configuration.GetValue<string>("DBCONNSTR");
 var services = builder.Services;
-services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
+services.AddDbContext<ReportSectionContext>();
+//services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
 //services.AddScoped<IDbConnectionProvider>(p => new DbConnectionProvider(connStr));
 //services.AddScoped<IQueryExecutor, QueryExecutor>();
 

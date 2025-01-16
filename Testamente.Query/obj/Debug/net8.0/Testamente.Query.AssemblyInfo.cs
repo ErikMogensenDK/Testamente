@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Testamente.Query")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42a986f3bea471b8e2772465d9a50f2c7c998381")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9f13d6dff7061d7c166f767cb6547f5df5fb219")]
 [assembly: System.Reflection.AssemblyProductAttribute("Testamente.Query")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Testamente.Query")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
