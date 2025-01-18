@@ -13,10 +13,11 @@ var app = builder.Build();
 //services.AddScoped<IReportSectionService, ReportSectionService>();
 //services.AddScoped<IReportSectionRepo, ReportSectionRepo>();
 //services.AddScoped<IReportSectionPostQuery, ReportSectionPostQuery>();
-var connStr = builder.Configuration.GetValue<string>("DBCONNSTR");
+var connStr = builder.Configuration.GetConnectionString("DBCONNSTR");
 var services = builder.Services;
-services.AddDbContext<ReportSectionContext>();
+//services.AddDbContext<ReportSectionContext>();
 //services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
+services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr));
 //services.AddScoped<IDbConnectionProvider>(p => new DbConnectionProvider(connStr));
 //services.AddScoped<IQueryExecutor, QueryExecutor>();
 

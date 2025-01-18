@@ -2,10 +2,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Testamente.DataAccess;
 
-public class ReportSectionContext: DbContext
+public class ReportSectionContext : DbContext
 {
 	public ReportSectionContext(DbContextOptions<ReportSectionContext> options) : base(options)
-{
+	{
 
 	}
 
