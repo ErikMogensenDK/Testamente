@@ -1746,7 +1746,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Testamente.Domain": "1.0.0",
-          "microsoft.entityframeworkcore": "9.0.0"
+          "microsoft.entityframeworkcore": "9.0.1"
         },
         "compile": {
           "bin/placeholder/Testamente.DataAccess.dll": {}
