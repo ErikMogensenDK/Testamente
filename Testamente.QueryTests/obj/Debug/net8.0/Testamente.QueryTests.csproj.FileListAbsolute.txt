@@ -30,7 +30,6 @@ C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\Microsoft
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\NuGet.Frameworks.dll
-C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
 C:\Users\erikm\repos\Testamente\Testamente.QueryTests\bin\Debug\net8.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll

@@ -2,24 +2,17 @@ using Testamente.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+services.AddControllers();
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen();
+
+
+var connStr = builder.Configuration.GetValue<string>("DBCONNSTR");
+services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
 
 var app = builder.Build();
-
-//services.AddScoped<IReportSectionService, ReportSectionService>();
-//services.AddScoped<IReportSectionRepo, ReportSectionRepo>();
-//services.AddScoped<IReportSectionPostQuery, ReportSectionPostQuery>();
-var connStr = builder.Configuration.GetConnectionString("DBCONNSTR");
-var services = builder.Services;
-//services.AddDbContext<ReportSectionContext>();
-//services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
-services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr));
-//services.AddScoped<IDbConnectionProvider>(p => new DbConnectionProvider(connStr));
-//services.AddScoped<IQueryExecutor, QueryExecutor>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -56,3 +49,11 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+//services.AddScoped<IDbConnectionProvider>(p => new DbConnectionProvider(connStr));
+//services.AddScoped<IQueryExecutor, QueryExecutor>();
+//services.AddScoped<IReportSectionService, ReportSectionService>();
+//services.AddScoped<IReportSectionRepo, ReportSectionRepo>();
+//services.AddScoped<IReportSectionPostQuery, ReportSectionPostQuery>();
+//services.AddDbContext<ReportSectionContext>();
+//services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
