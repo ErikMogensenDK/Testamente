@@ -4,9 +4,9 @@ namespace Testamente.DataAccess;
 
 public class ReportSectionRepo : IReportSectionRepository
 {
-	private readonly ReportSectionContext _context;
+	private readonly TestamenteContext _context;
 
-	public ReportSectionRepo(ReportSectionContext context)
+	public ReportSectionRepo(TestamenteContext context)
 	{
 		_context = context;
 	}

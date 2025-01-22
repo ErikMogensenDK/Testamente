@@ -209,7 +209,8 @@ public class InheritanceCalculator
 		}
 		else if (heir.Children != null && heir.Children.Count > 0)
 		{
-			int numOfChildren = heir.Children.Count;
+			List<Person> livingChildren = heir.Children.Where(x=> x.IsAlive).ToList();
+			int numOfChildren = livingChildren.Count;
 			double updatedInheritanceShare= inheritanceToAssign/numOfChildren;
 			foreach(var child in heir.Children)
 			{

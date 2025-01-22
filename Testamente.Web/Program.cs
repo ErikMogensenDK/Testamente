@@ -10,7 +10,7 @@ services.AddSwaggerGen();
 
 
 var connStr = builder.Configuration.GetValue<string>("DBCONNSTR");
-services.AddDbContext<ReportSectionContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
+services.AddDbContext<TestamenteContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
 
 var app = builder.Build();
 

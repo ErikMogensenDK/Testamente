@@ -10,7 +10,7 @@ using Testamente.DataAccess;
 
 namespace Testamente.Web.Migrations
 {
-    [DbContext(typeof(ReportSectionContext))]
+    [DbContext(typeof(TestamenteContext))]
     [Migration("20250121201205_InitialMigration")]
     partial class InitialMigration
     {
