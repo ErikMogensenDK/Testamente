@@ -11,7 +11,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 0.5;
-		Testator testator = new(){PersonId=1};
+		Person testator = new(){PersonId=1};
 		Person ChildOne = new(){PersonId = 2,Name ="NameOne"};
 		Person ChildTwo= new(){PersonId= 3,Name="NameTwo"};
 		testator.Children = new(){ChildOne, ChildTwo};
@@ -33,7 +33,7 @@ public class InheritanceCalculatorTests
 		//Arrange
 		double expectedShareForChildren = 0.25;
 		double expectedShareForSpouse= 0.50;
-		Testator testator = new();
+		Person testator = new();
 		Person ChildOne = new(){Name ="NameOne"};
 		Person ChildTwo= new(){Name="NameTwo"};
 		Person spouse = new(){Name ="NameOfSpouse"};
@@ -58,7 +58,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShareForSpouse= 1;
-		Testator testator = new();
+		Person testator = new();
 		Person spouse = new(){Name ="NameOfSpouse"};
 		testator.Spouse= spouse;
 		InheritanceCalculator calculator = new();
@@ -78,7 +78,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 0.5;
-		Testator testator = new();
+		Person testator = new();
 		Person father = new(){Name ="NameOfFather"};
 		Person mother = new(){Name="NameOfMother"};
 		testator.Father = father;
@@ -102,7 +102,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 1;
-		Testator testator = new() { PersonId = 1 };
+		Person testator = new() { PersonId = 1 };
 		Person father = new(){Name ="NameOfFather", PersonId=2};
 		testator.Father = father;
 		InheritanceCalculator calculator = new();
@@ -122,7 +122,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 1;
-		Testator testator = new();
+		Person testator = new();
 		Person mother = new(){Name ="NameOfMother"};
 		testator.Mother= mother;
 		InheritanceCalculator calculator = new();
@@ -143,7 +143,7 @@ public class InheritanceCalculatorTests
 		//Arrange
 		double expectedShareFather = 0.5;
 		double expectedShareSibling = 0.25;
-		Testator testator = new(){PersonId=1};
+		Person testator = new(){PersonId=1};
 		Person father = new(){PersonId=2,Name ="NameOfFather"};
 		testator.Father = father;
 		Person brother = new() { PersonId = 3, Name = "NameOfBrother" };
@@ -171,7 +171,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare= 0.5;
-		Testator testator = new(){PersonId=1};
+		Person testator = new(){PersonId=1};
 		Person mother = new(){PersonId=2, Name ="NameOfMother"};
 		testator.Mother= mother;
 		Person sister = new() { PersonId = 3, Name = "NameOfSister" };
@@ -195,7 +195,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShareSibling = 0.25;
-		Testator testator = new() { PersonId = 1 };
+		Person testator = new() { PersonId = 1 };
 		Person brother = new() { PersonId = 2, Name = "NameOfBrother" };
 		Person sister = new() { PersonId = 3, Name = "NameOfSister" };
 		Person secondBrother = new() { PersonId = 4, Name = "NameOfsecondBrother" };
@@ -228,7 +228,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShareSibling = 0.25;
-		Testator testator = new(){PersonId=1};
+		Person testator = new(){PersonId=1};
 		Person brother = new(){Name ="NameOfBrother", PersonId=2};
 		Person sister= new(){Name ="NameOfSister", PersonId=3};
 		Person secondBrother = new(){Name ="NameOfsecondBrother", PersonId=4};
@@ -260,7 +260,7 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 1;
-		Testator testator = new();
+		Person testator = new();
 		InheritanceCalculator calculator = new();
 
 		//Act
@@ -282,7 +282,7 @@ public class InheritanceCalculatorTests
 		//Arrange
 		double expectedShareAdult = 0.5;
 		double expectedShareChildren = 0.25;
-		Testator testator = new() { PersonId = 1 };
+		Person testator = new() { PersonId = 1 };
 		Person childOne = new() { PersonId = 2, Name = "NameOne" };
 		Person deceasedChild = new() { PersonId = 3, Name = "NameTwo", IsAlive = false };
 		deceasedChild.Children = new() { new() { PersonId = 4, Name = "GrandChildOne" }, new() { PersonId = 5, Name = "GrandChildTwo" } };
@@ -309,12 +309,19 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 0.5;
-		Testator testator = new() { PersonId = 1 };
+		Person testator = new() { PersonId = 1 };
 		Person grandparentOne= new() { PersonId = 2, Name = "GrandParentOne" };
 		Person grandparentTwo = new() { PersonId = 3, Name = "GrandParentTwo", IsAlive = false };
-		Person grandparentThree = new() { PersonId = 3, Name = "GrandParentThree" };
-		testator.Grandparents = new() { grandparentOne, grandparentTwo, grandparentThree };
+		Person grandparentThree = new() { PersonId = 4, Name = "GrandParentThree" };
+		Person parentOne = new() { PersonId = 5, Name = "ParentOne", IsAlive = false };
+		Person parentTwo= new() { PersonId = 6, Name = "ParentTwo", IsAlive = false };
+		parentOne.Father = grandparentOne;
+		parentOne.Mother= grandparentTwo;
+		testator.Father = parentOne;
+		parentTwo.Father=grandparentThree;;
+		testator.Mother= parentTwo;
 		InheritanceCalculator calculator = new();
+
 		//Act
 		Dictionary<Person, double> inheritanceDict = calculator.CalculateInheritance(1, testator);
 		List<Person> actualHeirs = new();
@@ -323,6 +330,7 @@ public class InheritanceCalculatorTests
 			Console.WriteLine(heir.Name);
 			actualHeirs.Add(heir);
 		}
+
 		//Assert
 		Assert.AreEqual(2, actualHeirs.Count);
 		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[0]]);
@@ -330,17 +338,25 @@ public class InheritanceCalculatorTests
 		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[1]]);
 		Assert.AreEqual(grandparentThree.Name, actualHeirs[1].Name);
 	}
+
 	[TestMethod]
 	public void Calculate_returnsExpectedResultsWithNoSecondClassHeirsAnd3AliveGrandParentsAndOneDeadWith1Child()
 	{
 		//Arrange
 		double expectedShare = 0.25;
-		Testator testator = new() { PersonId = 1 };
-		Person grandparentOne= new() { PersonId = 2, Name = "GrandParentOne" };
-		Person grandparentTwo = new() { PersonId = 3, Name = "GrandParentTwo"};
-		Person grandparentThree= new() { PersonId = 4, Name = "GrandParentFour", Children = new() { new() { Name="ChildName", PersonId = 5 } } };
-		Person grandparentFour = new() { PersonId = 6, Name = "GrandParentFour", IsAlive = false, Children = new() { new() { Name="ChildNameTwo", PersonId = 7 } } };
-		testator.Grandparents = new() { grandparentOne, grandparentTwo, grandparentThree, grandparentFour };
+		Person testator = new() { PersonId = 1 };
+		Person grandparentOne = new() { PersonId = 2, Name = "GrandParentOne" };
+		Person grandparentTwo = new() { PersonId = 3, Name = "GrandParentTwo" };
+		Person grandparentThree = new() { PersonId = 4, Name = "GrandParentFour", Children = new() { new() { Name = "ChildName", PersonId = 5 } } };
+		Person grandparentFour = new() { PersonId = 6, Name = "GrandParentFour", IsAlive = false, Children = new() { new() { Name = "ChildNameTwo", PersonId = 7 } } };
+		Person parentOne = new() { PersonId = 8, Name = "ParentOne", IsAlive = false };
+		Person parentTwo= new() { PersonId = 9, Name = "ParentTwo", IsAlive = false };
+		parentOne.Father = grandparentOne;
+		parentOne.Mother = grandparentTwo;
+		testator.Father = parentOne;
+		parentTwo.Father = grandparentThree;
+		parentTwo.Mother= grandparentFour; 
+		testator.Mother = parentTwo;
 		InheritanceCalculator calculator = new();
 		//Act
 		Dictionary<Person, double> inheritanceDict = calculator.CalculateInheritance(1, testator);
@@ -369,7 +385,7 @@ public class InheritanceCalculatorTests
 		//Arrange
 		double expectedShareSpouse = 0.125;
 		double expectedShareChild= 0.0625;
-		Testator testator = new() { PersonId = 1 };
+		Person testator = new() { PersonId = 1 };
 		Person spouse = new() { PersonId = 2, Name = "Spouse" };
 		Person childOne = new() { PersonId = 3, Name = "ChildOne" };
 		Person childTwo = new() { PersonId = 4, Name = "SecondChild" };

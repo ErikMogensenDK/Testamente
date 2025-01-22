@@ -8,7 +8,7 @@ public class InheritanceCalculator
 		
 	}
 
-	public Dictionary<Person, double> CalculateInheritance(double inheritance, Testator testator)
+	public Dictionary<Person, double> CalculateInheritance(double inheritance, Person testator)
 	{
 		Dictionary<Person, double> inheritanceDict = new();
 		if (testator == null)
@@ -22,7 +22,7 @@ public class InheritanceCalculator
 		// 2nd inheritance class
 
 		// TwoParents Alive
-		if (testator.Father != null && testator.Mother != null)
+		if (!IsNullOrDead(testator.Father) && !IsNullOrDead(testator.Mother))
 		{
 			inheritanceDict[testator.Father] = inheritance/2;
 			inheritanceDict[testator.Mother] = inheritance/2;
@@ -80,11 +80,12 @@ public class InheritanceCalculator
 		}
 		// No SecondClassInheritants!
 		// Check if thirdClassInheritants
-		if(!IsNullOrEmpty(testator.Grandparents))
+		var grandParents = GetGrandparentsIfAny(testator);
+		if(!IsNullOrEmpty(grandParents))
 		{
 			// Add any grandparents to lists
-			List<Person> inheritingGrandparents= testator.Grandparents.Where(x => x.IsAlive).ToList();
-			List<Person> deadGrandparents = testator.Grandparents.Where(x => !x.IsAlive).ToList();
+			List<Person> inheritingGrandparents= grandParents.Where(x => x.IsAlive).ToList();
+			List<Person> deadGrandparents = grandParents.Where(x => !x.IsAlive).ToList();
 			int numOfDeadGrandparentsWithoutChildren = 0;
 			//Count number of dead grandparents without living children (these nephews/nieces should NOT inherit)
 			for(int i = 0; i<deadGrandparents.Count; i++)
@@ -120,7 +121,24 @@ public class InheritanceCalculator
 		return inheritanceDict;
 	}
 
-    private Dictionary<Person, double> SplitAmongFirstClassInheritantsIfAny(double inheritance, Testator testator)
+    private List<Person> GetGrandparentsIfAny(Person testator)
+    {
+		List<Person> grandParents = new();
+		if (testator.Father?.Father != null)
+			grandParents.Add(testator.Father.Father);
+		if (testator.Father?.Mother != null)
+			grandParents.Add(testator.Father.Mother);
+		if (testator.Mother?.Father != null)
+			grandParents.Add(testator.Mother.Father);
+		if (testator.Mother?.Mother != null)
+			grandParents.Add(testator.Mother.Mother);
+		if (grandParents.Count == 0)
+			return null;
+		else
+			return grandParents;
+    }
+
+    private Dictionary<Person, double> SplitAmongFirstClassInheritantsIfAny(double inheritance, Person testator)
     {
 		Dictionary<Person,double> inheritanceDict = new();
 		// No living spouse, but children
@@ -156,7 +174,7 @@ public class InheritanceCalculator
 		return new Dictionary<Person, double>();
 	}
 
-    private List<Person> GetSiblingsAndHalfSiblingsIfAny(Testator testator)
+    private List<Person> GetSiblingsAndHalfSiblingsIfAny(Person testator)
     {
 		List<Person> siblings = new();
 		if (testator.Father != null && testator.Father.Children?.Count > 0)
@@ -215,7 +233,7 @@ public class InheritanceCalculator
 			return false;
 	}
 
-    public Dictionary<Person, double> CalculateForcedInheritance(double inheritance, Testator testator)
+    public Dictionary<Person, double> CalculateForcedInheritance(double inheritance, Person testator)
     {
 		return SplitAmongFirstClassInheritantsIfAny(0.25, testator);
     }

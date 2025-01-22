@@ -8,4 +8,7 @@ public class Person
 	public string Address { get; set; }
 	public List<Person> Children { get; set; }
 	public bool IsAlive { get; set; } = true;
+	public Person Spouse { get; set; }
+	public Person Father { get; set; }
+	public Person Mother { get; set; }
 }
