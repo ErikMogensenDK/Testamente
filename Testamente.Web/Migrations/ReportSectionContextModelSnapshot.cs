@@ -17,7 +17,7 @@ namespace Testamente.Web.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.12")
+                .HasAnnotation("ProductVersion", "9.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -66,8 +66,11 @@ namespace Testamente.Web.Migrations
 
             modelBuilder.Entity("Testamente.DataAccess.ReportSectionEntity", b =>
                 {
-                    b.Property<string>("ReportSectionEntityId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("ReportSectionEntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReportSectionEntityId"));
 
                     b.Property<string>("Body")
                         .IsRequired()

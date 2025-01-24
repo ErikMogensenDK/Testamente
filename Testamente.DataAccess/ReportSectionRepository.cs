@@ -2,11 +2,11 @@ using Testamente.Domain;
 
 namespace Testamente.DataAccess;
 
-public class ReportSectionRepo : IReportSectionRepository
+public class ReportSectionRepository : IReportSectionRepository
 {
 	private readonly TestamenteContext _context;
 
-	public ReportSectionRepo(TestamenteContext context)
+	public ReportSectionRepository(TestamenteContext context)
 	{
 		_context = context;
 	}

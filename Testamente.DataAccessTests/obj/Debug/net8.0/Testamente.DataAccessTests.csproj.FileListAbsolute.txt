@@ -126,3 +126,5 @@ C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\obj\Debug\net8.0\refi
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\obj\Debug\net8.0\Testamente.DataAccessTests.pdb
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\obj\Debug\net8.0\Testamente.DataAccessTests.genruntimeconfig.cache
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\obj\Debug\net8.0\ref\Testamente.DataAccessTests.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
