@@ -1,5 +1,8 @@
 using Testamente.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using Testamente.Query;
+using Testamente.Domain;
+using Testamente.App.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -11,6 +14,11 @@ services.AddSwaggerGen();
 
 var connStr = builder.Configuration.GetValue<string>("DBCONNSTR");
 services.AddDbContext<TestamenteContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
+services.AddScoped<IDbConnectionProvider> (p => new DbConnectionProvider(connStr));
+services.AddScoped<IQueryExecutor, QueryExecutor>();
+services.AddScoped<IPersonQuery, PersonQuery>();
+services.AddScoped<IPersonRepository, PersonRepository>();
+services.AddScoped<IPersonService, PersonService>();
 
 var app = builder.Build();
 
@@ -22,11 +30,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
 app.MapControllers();
 // app.MapGet("/weatherforecast", () =>
@@ -45,11 +48,6 @@ app.MapControllers();
 // .WithOpenApi();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
 
 //services.AddScoped<IDbConnectionProvider>(p => new DbConnectionProvider(connStr));
 //services.AddScoped<IQueryExecutor, QueryExecutor>();

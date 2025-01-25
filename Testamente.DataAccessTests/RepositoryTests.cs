@@ -12,8 +12,8 @@ public class RepositoryTests
     {
         var context = CreateTestContext();
         var repo = new PersonRepository(context);
-        var father = new Person(){PersonId=2, Name="Father", Address="AddressTwo", BirthDate = new(1980,1,1), IsAlive=true};
-        var d = new Person(){PersonId=1, Name="TestName", Address="Address", BirthDate = new(1996,3,6), IsAlive=true, Father=father};
+        var father = new Person(){PersonId=Guid.NewGuid(), Name="Father", Address="AddressTwo", BirthDate = new(1980,1,1), IsAlive=true};
+        var d = new Person(){PersonId=Guid.NewGuid(), Name="TestName", Address="Address", BirthDate = new(1996,3,6), IsAlive=true, Father=father};
         await repo.SaveCreateAsync(d);
 
         var saved = context.People.Single(p => p.PersonEntityId== d.PersonId);
@@ -27,7 +27,7 @@ public class RepositoryTests
     {
         var context = CreateTestContext();
         var repo = new ReportSectionRepository(context);
-        var d = new ReportSection() { ReportSectionId = 1, Body = "myBody", Title = "TestTitle" };
+        var d = new ReportSection() { ReportSectionId = Guid.NewGuid(), Body = "myBody", Title = "TestTitle" };
         await repo.SaveCreateAsync(d);
 
         var saved = context.ReportSections.Single(p => p.ReportSectionEntityId== d.ReportSectionId);

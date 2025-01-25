@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\erikm\\repos\\Testamente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}|Testamente.Web\\Testamente.Web.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.web\\testamente.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}|Testamente.Web\\Testamente.Web.csproj|solutionrelative:testamente.web\\testamente.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{1666E9B1-3196-4E4F-912D-725CDA671A3C}|Testamente.QueryTests\\Testamente.QueryTests.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.querytests\\testamente.querytests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1666E9B1-3196-4E4F-912D-725CDA671A3C}|Testamente.QueryTests\\Testamente.QueryTests.csproj|solutionrelative:testamente.querytests\\testamente.querytests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DABE57D2-71BB-4753-9F42-110928899F95}|Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.dataaccesstests\\testamente.dataaccesstests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{DABE57D2-71BB-4753-9F42-110928899F95}|Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj|solutionrelative:testamente.dataaccesstests\\testamente.dataaccesstests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1666E9B1-3196-4E4F-912D-725CDA671A3C}|Testamente.QueryTests\\Testamente.QueryTests.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.querytests\\testamente.querytests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1666E9B1-3196-4E4F-912D-725CDA671A3C}|Testamente.QueryTests\\Testamente.QueryTests.csproj|solutionrelative:testamente.querytests\\testamente.querytests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}|Testamente.Web\\Testamente.Web.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.web\\testamente.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}|Testamente.Web\\Testamente.Web.csproj|solutionrelative:testamente.web\\testamente.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8720F61-0CEB-440A-A21A-3961BF5865B4}|Testamente.Query\\Testamente.Query.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.query\\testamente.query.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C8720F61-0CEB-440A-A21A-3961BF5865B4}|Testamente.Query\\Testamente.Query.csproj|solutionrelative:testamente.query\\testamente.query.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A50322E-F917-4F1C-A858-B574FE2E34DB}|Testamente.DataAccess\\Testamente.DataAccess.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.dataaccess\\testamente.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -26,12 +30,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Testamente.Web",
+              "DocumentIndex": 3,
+              "Title": "Testamente.Query.csproj",
+              "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Query\\Testamente.Query.csproj",
+              "RelativeDocumentMoniker": "Testamente.Query\\Testamente.Query.csproj",
+              "ToolTip": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Query\\Testamente.Query.csproj",
+              "RelativeToolTip": "Testamente.Query\\Testamente.Query.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-25T05:36:34.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Testamente.Web.csproj",
               "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Testamente.Web.csproj",
               "RelativeDocumentMoniker": "Testamente.Web\\Testamente.Web.csproj",
               "ToolTip": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Testamente.Web.csproj",
@@ -40,14 +65,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-01-24T13:03:37.858Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
@@ -64,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Testamente.QueryTests.csproj",
               "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.QueryTests\\Testamente.QueryTests.csproj",
               "RelativeDocumentMoniker": "Testamente.QueryTests\\Testamente.QueryTests.csproj",
@@ -77,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Testamente.DataAccess.csproj",
               "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.DataAccess\\Testamente.DataAccess.csproj",
               "RelativeDocumentMoniker": "Testamente.DataAccess\\Testamente.DataAccess.csproj",

@@ -11,9 +11,9 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 0.5;
-		Person testator = new(){PersonId=1};
-		Person ChildOne = new(){PersonId = 2,Name ="NameOne"};
-		Person ChildTwo= new(){PersonId= 3,Name="NameTwo"};
+		Person testator = new(){PersonId=Guid.NewGuid()};
+		Person ChildOne = new(){PersonId = Guid.NewGuid(),Name ="NameOne"};
+		Person ChildTwo= new(){PersonId= Guid.NewGuid(),Name="NameTwo"};
 		testator.Children = new(){ChildOne, ChildTwo};
 		InheritanceCalculator calculator = new();
 		//Act
@@ -24,6 +24,7 @@ public class InheritanceCalculatorTests
 			actualHeirs.Add(heir);
 		}
 		//Assert
+		Assert.AreEqual(2, actualHeirs.Count);
 		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[0]]);
 		Assert.AreEqual(expectedShare, inheritanceDict[actualHeirs[1]]);
 	}
@@ -102,8 +103,8 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 1;
-		Person testator = new() { PersonId = 1 };
-		Person father = new(){Name ="NameOfFather", PersonId=2};
+		Person testator = new() { PersonId = Guid.NewGuid() };
+		Person father = new(){Name ="NameOfFather", PersonId=Guid.NewGuid()};
 		testator.Father = father;
 		InheritanceCalculator calculator = new();
 		//Act
@@ -143,11 +144,11 @@ public class InheritanceCalculatorTests
 		//Arrange
 		double expectedShareFather = 0.5;
 		double expectedShareSibling = 0.25;
-		Person testator = new(){PersonId=1};
-		Person father = new(){PersonId=2,Name ="NameOfFather"};
+		Person testator = new(){PersonId=Guid.NewGuid()};
+		Person father = new(){PersonId=Guid.NewGuid(),Name ="NameOfFather"};
 		testator.Father = father;
-		Person brother = new() { PersonId = 3, Name = "NameOfBrother" };
-		Person sister = new() { PersonId = 4, Name = "NameOfSister" };
+		Person brother = new() { PersonId = Guid.NewGuid(), Name = "NameOfBrother" };
+		Person sister = new() { PersonId = Guid.NewGuid(), Name = "NameOfSister" };
 		//testator.Siblings = new(){brother,sister};
 		father.Children=new(){brother,sister};
 		InheritanceCalculator calculator = new();
@@ -171,10 +172,10 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare= 0.5;
-		Person testator = new(){PersonId=1};
-		Person mother = new(){PersonId=2, Name ="NameOfMother"};
+		Person testator = new(){PersonId=Guid.NewGuid()};
+		Person mother = new(){PersonId=Guid.NewGuid(), Name ="NameOfMother"};
 		testator.Mother= mother;
-		Person sister = new() { PersonId = 3, Name = "NameOfSister" };
+		Person sister = new() { PersonId = Guid.NewGuid(), Name = "NameOfSister" };
 		mother.Children=new(){sister};
 		InheritanceCalculator calculator = new();
 		//Act
@@ -195,12 +196,12 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShareSibling = 0.25;
-		Person testator = new() { PersonId = 1 };
-		Person brother = new() { PersonId = 2, Name = "NameOfBrother" };
-		Person sister = new() { PersonId = 3, Name = "NameOfSister" };
-		Person secondBrother = new() { PersonId = 4, Name = "NameOfsecondBrother" };
-		Person secondSister = new() { PersonId = 5, Name = "NameOfsecondSister" };
-		Person father = new() { PersonId = 6, IsAlive = false, Children = new(){ testator, brother, sister, secondBrother, secondSister } };
+		Person testator = new() { PersonId = Guid.NewGuid() };
+		Person brother = new() { PersonId = Guid.NewGuid(), Name = "NameOfBrother" };
+		Person sister = new() { PersonId = Guid.NewGuid(), Name = "NameOfSister" };
+		Person secondBrother = new() { PersonId = Guid.NewGuid(), Name = "NameOfsecondBrother" };
+		Person secondSister = new() { PersonId = Guid.NewGuid(), Name = "NameOfsecondSister" };
+		Person father = new() { PersonId = Guid.NewGuid(), IsAlive = false, Children = new(){ testator, brother, sister, secondBrother, secondSister } };
 		testator.Father = father;
 		//testator.Siblings = new(){brother,sister,secondBrother,secondSister};
 		InheritanceCalculator calculator = new();
@@ -228,12 +229,12 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShareSibling = 0.25;
-		Person testator = new(){PersonId=1};
-		Person brother = new(){Name ="NameOfBrother", PersonId=2};
-		Person sister= new(){Name ="NameOfSister", PersonId=3};
-		Person secondBrother = new(){Name ="NameOfsecondBrother", PersonId=4};
-		Person secondSister= new(){Name ="NameOfsecondSister", PersonId=5};
-		Person father = new() { PersonId = 6, IsAlive = false, Children = new() { brother, sister, secondBrother, secondSister } };
+		Person testator = new(){PersonId=Guid.NewGuid()};
+		Person brother = new(){Name ="NameOfBrother", PersonId=Guid.NewGuid()};
+		Person sister= new(){Name ="NameOfSister", PersonId=Guid.NewGuid()};
+		Person secondBrother = new(){Name ="NameOfsecondBrother", PersonId=Guid.NewGuid()};
+		Person secondSister= new(){Name ="NameOfsecondSister", PersonId=Guid.NewGuid()};
+		Person father = new() { PersonId = Guid.NewGuid(), IsAlive = false, Children = new() { brother, sister, secondBrother, secondSister } };
 		testator.Father=father;
 		//testator.Siblings = new(){brother,sister,secondBrother,secondSister};
 		InheritanceCalculator calculator = new();
@@ -282,10 +283,10 @@ public class InheritanceCalculatorTests
 		//Arrange
 		double expectedShareAdult = 0.5;
 		double expectedShareChildren = 0.25;
-		Person testator = new() { PersonId = 1 };
-		Person childOne = new() { PersonId = 2, Name = "NameOne" };
-		Person deceasedChild = new() { PersonId = 3, Name = "NameTwo", IsAlive = false };
-		deceasedChild.Children = new() { new() { PersonId = 4, Name = "GrandChildOne" }, new() { PersonId = 5, Name = "GrandChildTwo" } };
+		Person testator = new() { PersonId = Guid.NewGuid() };
+		Person childOne = new() { PersonId = Guid.NewGuid(), Name = "NameOne" };
+		Person deceasedChild = new() { PersonId = Guid.NewGuid(), Name = "NameTwo", IsAlive = false };
+		deceasedChild.Children = new() { new() { PersonId = Guid.NewGuid(), Name = "GrandChildOne" }, new() { PersonId = Guid.NewGuid(), Name = "GrandChildTwo" } };
 		testator.Children = new() { childOne, deceasedChild };
 		InheritanceCalculator calculator = new();
 		//Act
@@ -309,12 +310,12 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 0.5;
-		Person testator = new() { PersonId = 1 };
-		Person grandparentOne= new() { PersonId = 2, Name = "GrandParentOne" };
-		Person grandparentTwo = new() { PersonId = 3, Name = "GrandParentTwo", IsAlive = false };
-		Person grandparentThree = new() { PersonId = 4, Name = "GrandParentThree" };
-		Person parentOne = new() { PersonId = 5, Name = "ParentOne", IsAlive = false };
-		Person parentTwo= new() { PersonId = 6, Name = "ParentTwo", IsAlive = false };
+		Person testator = new() { PersonId = Guid.NewGuid() };
+		Person grandparentOne= new() { PersonId = Guid.NewGuid(), Name = "GrandParentOne" };
+		Person grandparentTwo = new() { PersonId = Guid.NewGuid(), Name = "GrandParentTwo", IsAlive = false };
+		Person grandparentThree = new() { PersonId = Guid.NewGuid(), Name = "GrandParentThree" };
+		Person parentOne = new() { PersonId = Guid.NewGuid(), Name = "ParentOne", IsAlive = false };
+		Person parentTwo= new() { PersonId = Guid.NewGuid(), Name = "ParentTwo", IsAlive = false };
 		parentOne.Father = grandparentOne;
 		parentOne.Mother= grandparentTwo;
 		testator.Father = parentOne;
@@ -344,13 +345,13 @@ public class InheritanceCalculatorTests
 	{
 		//Arrange
 		double expectedShare = 0.25;
-		Person testator = new() { PersonId = 1 };
-		Person grandparentOne = new() { PersonId = 2, Name = "GrandParentOne" };
-		Person grandparentTwo = new() { PersonId = 3, Name = "GrandParentTwo" };
-		Person grandparentThree = new() { PersonId = 4, Name = "GrandParentFour", Children = new() { new() { Name = "ChildName", PersonId = 5 } } };
-		Person grandparentFour = new() { PersonId = 6, Name = "GrandParentFour", IsAlive = false, Children = new() { new() { Name = "ChildNameTwo", PersonId = 7 } } };
-		Person parentOne = new() { PersonId = 8, Name = "ParentOne", IsAlive = false };
-		Person parentTwo= new() { PersonId = 9, Name = "ParentTwo", IsAlive = false };
+		Person testator = new() { PersonId = Guid.NewGuid() };
+		Person grandparentOne = new() { PersonId = Guid.NewGuid(), Name = "GrandParentOne" };
+		Person grandparentTwo = new() { PersonId = Guid.NewGuid(), Name = "GrandParentTwo" };
+		Person grandparentThree = new() { PersonId = Guid.NewGuid(), Name = "GrandParentFour", Children = new() { new() { Name = "ChildName", PersonId = Guid.NewGuid() } } };
+		Person grandparentFour = new() { PersonId = Guid.NewGuid(), Name = "GrandParentFour", IsAlive = false, Children = new() { new() { Name = "ChildNameTwo", PersonId = Guid.NewGuid() } } };
+		Person parentOne = new() { PersonId = Guid.NewGuid(), Name = "ParentOne", IsAlive = false };
+		Person parentTwo= new() { PersonId = Guid.NewGuid(), Name = "ParentTwo", IsAlive = false };
 		parentOne.Father = grandparentOne;
 		parentOne.Mother = grandparentTwo;
 		testator.Father = parentOne;
@@ -385,10 +386,10 @@ public class InheritanceCalculatorTests
 		//Arrange
 		double expectedShareSpouse = 0.125;
 		double expectedShareChild= 0.0625;
-		Person testator = new() { PersonId = 1 };
-		Person spouse = new() { PersonId = 2, Name = "Spouse" };
-		Person childOne = new() { PersonId = 3, Name = "ChildOne" };
-		Person childTwo = new() { PersonId = 4, Name = "SecondChild" };
+		Person testator = new() { PersonId = Guid.NewGuid() };
+		Person spouse = new() { PersonId = Guid.NewGuid(), Name = "Spouse" };
+		Person childOne = new() { PersonId = Guid.NewGuid(), Name = "ChildOne" };
+		Person childTwo = new() { PersonId = Guid.NewGuid(), Name = "SecondChild" };
 		testator.Spouse=spouse;
 		testator.Children = new(){childOne,childTwo};
 		InheritanceCalculator calculator = new();
