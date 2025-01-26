@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "abRALYeq+Hs=",
+  "dgSpecHash": "ryazNt7bcjs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikm\\repos\\Testamente\\testamente.web\\Testamente.Web.csproj",
+  "projectFilePath": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Testamente.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikm\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

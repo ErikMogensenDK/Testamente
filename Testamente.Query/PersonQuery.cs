@@ -42,7 +42,7 @@ public class PersonQuery: IPersonQuery
 
 	private string CreateGetSql(Guid id)
 	{
-		return $"select PersonEntityId, Name, Address, BirthDate, IsAlive, FatherId, MotherId, SpouseId from People where PersonEntityId = '{id}'";
+		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where PersonEntityId = '{id}'";
 	}
 }
 

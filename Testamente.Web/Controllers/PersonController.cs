@@ -6,7 +6,7 @@ using Testamente.Query;
 namespace Testamente.Web.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class PersonController: ControllerBase
 {
     private readonly IPersonService _service;
@@ -34,4 +34,12 @@ public class PersonController: ControllerBase
 
         return Ok(result);
     }
+
+    [HttpPut("{id}")]
+    public ActionResult<PersonQueryDto> Update([FromRoute]Guid id)
+    {
+        var result = _service.UpdateAsync(id);
+        return Ok();
+    }
+
 }

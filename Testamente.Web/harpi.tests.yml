@@ -1,0 +1,18 @@
+variables:
+  baseUrl: "https://localhost:5201/api"
+  # baseUrl: "http://localhost:5067/api/Pages"
+  guid: '80C03DFD-5034-44FD-A042-32DF6EBF51BC'
+
+headers:
+  iKey: ""
+
+requests:
+  - url: "$(baseUrl)/Person/$(guid)"
+    method: get
+    asserts:
+      statusCodeEquals: 200
+      javascriptAsserts:
+        - name: "Count was longer than 4 as expected"
+          code: "response.length>4"
+
+

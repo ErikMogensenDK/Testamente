@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\erikm\\repos\\Testamente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1666E9B1-3196-4E4F-912D-725CDA671A3C}|Testamente.QueryTests\\Testamente.QueryTests.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.querytests\\testamente.querytests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1666E9B1-3196-4E4F-912D-725CDA671A3C}|Testamente.QueryTests\\Testamente.QueryTests.csproj|solutionrelative:testamente.querytests\\testamente.querytests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DABE57D2-71BB-4753-9F42-110928899F95}|Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.dataaccesstests\\testamente.dataaccesstests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{DABE57D2-71BB-4753-9F42-110928899F95}|Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj|solutionrelative:testamente.dataaccesstests\\testamente.dataaccesstests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{C8720F61-0CEB-440A-A21A-3961BF5865B4}|Testamente.Query\\Testamente.Query.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.query\\testamente.query.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C8720F61-0CEB-440A-A21A-3961BF5865B4}|Testamente.Query\\Testamente.Query.csproj|solutionrelative:testamente.query\\testamente.query.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}|Testamente.Web\\Testamente.Web.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.web\\testamente.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}|Testamente.Web\\Testamente.Web.csproj|solutionrelative:testamente.web\\testamente.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8720F61-0CEB-440A-A21A-3961BF5865B4}|Testamente.Query\\Testamente.Query.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.query\\testamente.query.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C8720F61-0CEB-440A-A21A-3961BF5865B4}|Testamente.Query\\Testamente.Query.csproj|solutionrelative:testamente.query\\testamente.query.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}|Testamente.Web\\Testamente.Web.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.web\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}|Testamente.Web\\Testamente.Web.csproj|solutionrelative:testamente.web\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8720F61-0CEB-440A-A21A-3961BF5865B4}|Testamente.Query\\Testamente.Query.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.query\\personquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8720F61-0CEB-440A-A21A-3961BF5865B4}|Testamente.Query\\Testamente.Query.csproj|solutionrelative:testamente.query\\personquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1666E9B1-3196-4E4F-912D-725CDA671A3C}|Testamente.QueryTests\\Testamente.QueryTests.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.querytests\\testamente.querytests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1666E9B1-3196-4E4F-912D-725CDA671A3C}|Testamente.QueryTests\\Testamente.QueryTests.csproj|solutionrelative:testamente.querytests\\testamente.querytests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DABE57D2-71BB-4753-9F42-110928899F95}|Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.dataaccesstests\\testamente.dataaccesstests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DABE57D2-71BB-4753-9F42-110928899F95}|Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj|solutionrelative:testamente.dataaccesstests\\testamente.dataaccesstests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A50322E-F917-4F1C-A858-B574FE2E34DB}|Testamente.DataAccess\\Testamente.DataAccess.csproj|c:\\users\\erikm\\repos\\testamente\\testamente.dataaccess\\testamente.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -30,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,6 +51,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "PersonQuery.cs",
+              "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Query\\PersonQuery.cs",
+              "RelativeDocumentMoniker": "Testamente.Query\\PersonQuery.cs",
+              "ToolTip": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Query\\PersonQuery.cs",
+              "RelativeToolTip": "Testamente.Query\\PersonQuery.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T15:11:01.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PersonController.cs",
+              "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Controllers\\PersonController.cs",
+              "RelativeDocumentMoniker": "Testamente.Web\\Controllers\\PersonController.cs",
+              "ToolTip": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Controllers\\PersonController.cs",
+              "RelativeToolTip": "Testamente.Web\\Controllers\\PersonController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwB4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T14:41:41.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Testamente.Query.csproj",
               "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Query\\Testamente.Query.csproj",
               "RelativeDocumentMoniker": "Testamente.Query\\Testamente.Query.csproj",
@@ -55,20 +89,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Testamente.Web.csproj",
               "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Testamente.Web.csproj",
               "RelativeDocumentMoniker": "Testamente.Web\\Testamente.Web.csproj",
               "ToolTip": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Testamente.Web.csproj",
               "RelativeToolTip": "Testamente.Web\\Testamente.Web.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-01-24T13:03:37.858Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Testamente.DataAccessTests.csproj",
               "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj",
               "RelativeDocumentMoniker": "Testamente.DataAccessTests\\Testamente.DataAccessTests.csproj",
@@ -81,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Testamente.QueryTests.csproj",
               "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.QueryTests\\Testamente.QueryTests.csproj",
               "RelativeDocumentMoniker": "Testamente.QueryTests\\Testamente.QueryTests.csproj",
@@ -94,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Testamente.DataAccess.csproj",
               "DocumentMoniker": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.DataAccess\\Testamente.DataAccess.csproj",
               "RelativeDocumentMoniker": "Testamente.DataAccess\\Testamente.DataAccess.csproj",
