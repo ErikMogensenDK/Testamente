@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Testamente.Domain;
 
 namespace Testamente.DataAccess;
@@ -11,13 +12,47 @@ public class PersonRepository: IPersonRepository
 		_context = context;
 	}
 
+    public async Task DeleteAsync(Guid id)
+    {
+		var entity = _context.People.SingleOrDefault(e => e.PersonEntityId == id);
+		if (entity != null)
+		{
+			_context.People.Remove(entity);
+			await _context.SaveChangesAsync();
+		}
+		else
+			throw new KeyNotFoundException("Could not locate id to delete in db");
+    }
+
     public async Task SaveCreateAsync(Person person)
     {
 		if (person == null)
-		{
 			throw new ArgumentNullException(nameof(person));
-		}
+		var dbEntity = MapObjectToEntity(person);
+		_context.People.Add(dbEntity);
+		
+		await _context.SaveChangesAsync();
+    }
 
+    public async Task SaveUpdateAsync(Person person)
+    {
+		if (person == null)
+			throw new ArgumentNullException(nameof(person));
+
+		var entity = _context.People.SingleOrDefault(e => e.PersonEntityId == person.PersonId);
+		if (entity != null)
+		{
+			var dbEntity = MapObjectToEntity(person);
+			_context.People.Update(dbEntity);
+
+			await _context.SaveChangesAsync();
+		}
+		else
+			throw new KeyNotFoundException("Could not locate id to update in db");
+    }
+
+	private PersonEntity MapObjectToEntity(Person person)
+	{
 		var dbEntity = new PersonEntity
 		{
 			PersonEntityId = person.PersonId,
@@ -29,8 +64,6 @@ public class PersonRepository: IPersonRepository
 			FatherId = person.Father?.PersonId,
 			SpouseId = person.Spouse?.PersonId
 		};
-		_context.People.Add(dbEntity);
-		
-		await _context.SaveChangesAsync();
-    }
+		return dbEntity;
+	}
 }

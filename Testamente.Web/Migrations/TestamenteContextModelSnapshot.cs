@@ -86,17 +86,17 @@ namespace Testamente.Web.Migrations
                     b.HasOne("Testamente.DataAccess.PersonEntity", "Father")
                         .WithMany()
                         .HasForeignKey("FatherId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("Testamente.DataAccess.PersonEntity", "Mother")
                         .WithMany()
                         .HasForeignKey("MotherId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("Testamente.DataAccess.PersonEntity", "Spouse")
                         .WithMany()
                         .HasForeignKey("SpouseId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Father");
 

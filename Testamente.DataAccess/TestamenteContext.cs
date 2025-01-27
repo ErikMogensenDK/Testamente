@@ -17,19 +17,22 @@ public class TestamenteContext : DbContext
             .HasOne(p => p.Mother)
             .WithMany()
             .HasForeignKey(p => p.MotherId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder.Entity<PersonEntity>()
             .HasOne(p => p.Father)
             .WithMany()
             .HasForeignKey(p => p.FatherId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder.Entity<PersonEntity>()
             .HasOne(p => p.Spouse)
             .WithMany()
             .HasForeignKey(p => p.SpouseId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 
 

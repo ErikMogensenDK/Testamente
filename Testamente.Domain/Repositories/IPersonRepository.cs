@@ -4,4 +4,5 @@ public interface IPersonRepository
 {
 	Task SaveCreateAsync(Person person);
 	Task SaveUpdateAsync(Person person);
+	Task DeleteAsync(Guid id);
 }

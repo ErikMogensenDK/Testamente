@@ -8,7 +8,7 @@ namespace Testamente.DataAccessTests;
 public class RepositoryTests
 {
     [TestMethod]
-    public async Task PersonRepository_UsesDbContextAsExpected()
+    public async Task PersonRepository_SavesAsExpectedOnCreate()
     {
         var context = CreateTestContext();
         var repo = new PersonRepository(context);
@@ -21,6 +21,26 @@ public class RepositoryTests
         Assert.AreEqual(d.IsAlive, saved.IsAlive);
         Assert.AreEqual(d.Address, saved.Address);
         Assert.AreEqual(d.Father.PersonId, saved.FatherId);
+    }
+    [TestMethod]
+    public async Task PersonRepository_DeletesAsExpected()
+    {
+        var context = CreateTestContext();
+        var repo = new PersonRepository(context);
+        var father = new Person(){PersonId=Guid.NewGuid(), Name="Father", Address="AddressTwo", BirthDate = new(1980,1,1), IsAlive=true};
+        var d = new Person(){PersonId=Guid.NewGuid(), Name="TestName", Address="Address", BirthDate = new(1996,3,6), IsAlive=true, Father=father};
+        await repo.SaveCreateAsync(father);
+        await repo.SaveCreateAsync(d);
+
+        var saved = context.People.Single(p => p.PersonEntityId== d.PersonId);
+        Assert.AreEqual(d.Name, saved.Name);
+        Assert.AreEqual(d.IsAlive, saved.IsAlive);
+        Assert.AreEqual(d.Address, saved.Address);
+        Assert.AreEqual(d.Father.PersonId, saved.FatherId);
+
+        await repo.DeleteAsync(father.PersonId);
+        await repo.DeleteAsync(d.PersonId);
+        Assert.AreEqual(false, context.People.Any());
     }
     [TestMethod]
     public async Task ReportSectionRepository_UsesDbContextAsExpected()

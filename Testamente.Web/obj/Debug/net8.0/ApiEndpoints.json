@@ -2,7 +2,7 @@
   {
     "ContainingType": "Testamente.Web.Controllers.PersonController",
     "Method": "Create",
-    "RelativePath": "Person/{id}",
+    "RelativePath": "api/Person/{id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -23,8 +23,65 @@
   {
     "ContainingType": "Testamente.Web.Controllers.PersonController",
     "Method": "Get",
-    "RelativePath": "Person/{id}",
+    "RelativePath": "api/Person/{id}",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Testamente.Query.PersonQueryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Testamente.Web.Controllers.PersonController",
+    "Method": "Update",
+    "RelativePath": "api/Person/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Testamente.App.Models.CreatePersonRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Testamente.Query.PersonQueryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Testamente.Web.Controllers.PersonController",
+    "Method": "Delete",
+    "RelativePath": "api/Person/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

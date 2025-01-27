@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Testamente.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33c85808c34887290e89ba3cf7c4b890b9501a34")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d5bb1e741b44aa538cf7522b7ce719af6012c4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Testamente.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Testamente.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

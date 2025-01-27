@@ -21,6 +21,8 @@ public class PersonController: ControllerBase
     [HttpPost("{id}")]
     public async Task<IActionResult> Create([FromRoute] Guid id, [FromBody]CreatePersonRequest request)
     {
+        if (id == Guid.NewGuid())
+            return BadRequest();
         await _service.CreateAsync(id, request);
         return Ok();
     }
@@ -36,9 +38,16 @@ public class PersonController: ControllerBase
     }
 
     [HttpPut("{id}")]
-    public ActionResult<PersonQueryDto> Update([FromRoute]Guid id)
+    public ActionResult<PersonQueryDto> Update([FromRoute]Guid id, [FromBody]CreatePersonRequest request)
     {
-        var result = _service.UpdateAsync(id);
+        var result = _service.UpdateAsync(id, request);
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public ActionResult<PersonQueryDto> Delete([FromRoute]Guid id)
+    {
+        var result = _service.DeleteAsync(id);
         return Ok();
     }
 
