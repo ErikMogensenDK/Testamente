@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace Testamente.Web;
+namespace Testamente.Web.Identity;
 
 public class User: IdentityUser
 {
-	public string? Initials {get;set;}
 }

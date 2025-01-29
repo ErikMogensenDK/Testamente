@@ -7,6 +7,7 @@ using Dapper;
 using Microsoft.AspNetCore.Identity;
 using Testamente.Web;
 using Testamente.Web.Identity;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -30,6 +31,7 @@ services.AddScoped<IQueryExecutor, QueryExecutor>();
 services.AddScoped<IPersonQuery, PersonQuery>();
 services.AddScoped<IPersonRepository, PersonRepository>();
 services.AddScoped<IPersonService, PersonService>();
+services.AddScoped<IdentityContext>();
 SqlMapper.AddTypeHandler(new SqlDateOnlyTypeHandler());
 services.AddAuthorization();
 services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
@@ -45,6 +47,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapGet("users/me", async (ClaimsPrincipal claims, IdentityContext context) => 
+{
+    string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+
+    return await context.Users.FindAsync(userId);
+})
+.RequireAuthorization();
 
 app.MapIdentityApi<User>();
 app.UseHttpsRedirection();
