@@ -849,6 +849,7 @@
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "Testamente.DataAccess/1.0.0": {
         "dependencies": {
+          "Dapper": "2.1.35",
           "Microsoft.EntityFrameworkCore": "9.0.1",
           "Testamente.Domain": "1.0.0"
         },

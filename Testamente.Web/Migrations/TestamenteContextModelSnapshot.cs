@@ -41,6 +41,9 @@ namespace Testamente.Web.Migrations
                     b.Property<bool>("IsAlive")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<Guid?>("MotherId")
                         .HasColumnType("uniqueidentifier");
 

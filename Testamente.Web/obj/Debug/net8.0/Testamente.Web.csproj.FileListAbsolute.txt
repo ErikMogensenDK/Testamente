@@ -184,3 +184,13 @@ C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\runtimes\unix\li
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll

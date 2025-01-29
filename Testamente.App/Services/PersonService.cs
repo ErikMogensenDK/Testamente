@@ -22,7 +22,7 @@ public class PersonService : IPersonService
             Name = request.Name,
             BirthDate = request.BirthDate,
             Address = request.Address,
-            IsAlive = request.IsAlive,
+            IsAlive = request.IsAlive
         };
         await _repo.SaveCreateAsync(person);
     }
@@ -44,7 +44,7 @@ public class PersonService : IPersonService
             Name = request.Name,
             BirthDate = request.BirthDate,
             Address = request.Address,
-            IsAlive = request.IsAlive,
+            IsAlive = request.IsAlive
         };
         await _repo.SaveUpdateAsync(person);
     }

@@ -27,7 +27,6 @@ public class PersonQuery: IPersonQuery
 
 		var dto = new PersonQueryDto
 		{
-		
 			Id = match.Id,
 			Name = match.Name,
 			Address = match.Address,
@@ -42,7 +41,8 @@ public class PersonQuery: IPersonQuery
 
 	private string CreateGetSql(Guid id)
 	{
-		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where PersonEntityId = '{id}'";
+		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where IsDeleted = 'FALSE' AND PersonEntityId = '{id}'";
+		//return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive from People where IsDeleted = 'FALSE' AND PersonEntityId = '{id}'";
 	}
 }
 

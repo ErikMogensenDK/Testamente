@@ -17,7 +17,10 @@ public class PersonRepository: IPersonRepository
 		var entity = _context.People.SingleOrDefault(e => e.PersonEntityId == id);
 		if (entity != null)
 		{
-			_context.People.Remove(entity);
+			entity.IsDeleted = true;
+			var entry = _context.Entry(entity);
+			entry.State = EntityState.Modified;
+			entry.Property(e => e.IsDeleted).IsModified = true;
 			await _context.SaveChangesAsync();
 		}
 		else
@@ -43,8 +46,7 @@ public class PersonRepository: IPersonRepository
 		if (entity != null)
 		{
 			var dbEntity = MapObjectToEntity(person);
-			_context.People.Update(dbEntity);
-
+			_context.Entry(entity).CurrentValues.SetValues(dbEntity);
 			await _context.SaveChangesAsync();
 		}
 		else
@@ -60,9 +62,9 @@ public class PersonRepository: IPersonRepository
 			BirthDate = person.BirthDate,
 			Address = person.Address,
 			IsAlive = person.IsAlive,
-			MotherId = person.Mother?.PersonId,
-			FatherId = person.Father?.PersonId,
-			SpouseId = person.Spouse?.PersonId
+			// MotherId = person.Mother?.PersonId,
+			// FatherId = person.Father?.PersonId,
+			// SpouseId = person.Spouse?.PersonId
 		};
 		return dbEntity;
 	}

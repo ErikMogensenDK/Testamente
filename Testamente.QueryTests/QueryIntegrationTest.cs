@@ -11,7 +11,7 @@ public class QueryIntegrationTest
     public async Task PersonGet_UsesDbConnectionAndQueryExecutorAsExpected()
     {
         var id = Guid.NewGuid();
-        var sql = $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where PersonEntityId = '{id}'";
+        var sql = $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where IsDeleted = 'FALSE' AND PersonEntityId = '{id}'";
         var inputRowDto = new PersonRowDto 
         {
             Id = id,

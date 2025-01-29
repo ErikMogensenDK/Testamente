@@ -4,6 +4,9 @@ using Testamente.Query;
 using Testamente.Domain;
 using Testamente.App.Services;
 using Dapper;
+using Microsoft.AspNetCore.Identity;
+using Testamente.Web;
+using Testamente.Web.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -14,14 +17,25 @@ services.AddSwaggerGen();
 
 
 var connStr = builder.Configuration.GetValue<string>("DBCONNSTR");
-services.AddDbContext<TestamenteContext>(options => options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web")));
+services.AddDbContext<TestamenteContext>(options =>
+{
+    options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web"));
+});
+services.AddDbContext<IdentityContext>(options =>
+{
+    options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web"));
+});
 services.AddScoped<IDbConnectionProvider> (p => new DbConnectionProvider(connStr));
 services.AddScoped<IQueryExecutor, QueryExecutor>();
 services.AddScoped<IPersonQuery, PersonQuery>();
 services.AddScoped<IPersonRepository, PersonRepository>();
 services.AddScoped<IPersonService, PersonService>();
 SqlMapper.AddTypeHandler(new SqlDateOnlyTypeHandler());
-
+services.AddAuthorization();
+services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
+services.AddIdentityCore<User>()
+    .AddEntityFrameworkStores<IdentityContext>()
+    .AddApiEndpoints();
 
 var app = builder.Build();
 
@@ -32,6 +46,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.MapIdentityApi<User>();
 app.UseHttpsRedirection();
 
 app.MapControllers();

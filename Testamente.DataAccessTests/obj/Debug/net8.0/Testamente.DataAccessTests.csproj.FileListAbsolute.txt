@@ -128,3 +128,4 @@ C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\obj\Debug\net8.0\Test
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\obj\Debug\net8.0\ref\Testamente.DataAccessTests.dll
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\erikm\repos\Testamente\Testamente.DataAccessTests\bin\Debug\net8.0\Dapper.dll
