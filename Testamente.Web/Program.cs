@@ -34,7 +34,9 @@ services.AddScoped<IPersonService, PersonService>();
 services.AddScoped<IdentityContext>();
 SqlMapper.AddTypeHandler(new SqlDateOnlyTypeHandler());
 services.AddAuthorization();
-services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
+//services.AddAuthentication().AddBearerToken(IdentityConstants.ApplicationScheme);
+//services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
+services.AddAuthentication().AddCookie("Identity.Bearer");
 services.AddIdentityCore<User>()
     .AddEntityFrameworkStores<IdentityContext>()
     .AddApiEndpoints();
