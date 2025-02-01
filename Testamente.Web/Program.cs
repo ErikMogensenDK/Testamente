@@ -40,6 +40,7 @@ services.AddAuthentication().AddCookie("Identity.Bearer");
 services.AddIdentityCore<User>()
     .AddEntityFrameworkStores<IdentityContext>()
     .AddApiEndpoints();
+services.AddOpenApiDocument();
 
 var app = builder.Build();
 
