@@ -3,7 +3,7 @@ Firstly this API handles database access, and implements a service which calcula
 Some highlights:
 - The project was developed in a test-driven fashion, and especially the App layer has extensive testing to ensure the inheritance is split as expected.
 - The abstractions used to test in Testamente.QueryTests of IDbConnectionProvider and a IQueryExecutor ensures that even though the dependencies are quite complex when using dapper, that the unit-test is indeed atomic.
-- The project utilizes the open-source harpi CLI project to integration-test the api endpoints, providing concise documentation/verification of the entire project, all within an .yml file (See the tests.harpi.yml file in the Testamente.Web project folder if interested!)
+- The project utilizes the open-source harpi CLI project (https://github.com/teslae1/harpi) to integration-test the api endpoints, providing concise documentation/verification of endpoints, all within an .yml file (See the tests.harpi.yml file in the Testamente.Web project folder if interested!)
 
 A brief description
 The API has 5 sub-projects, which were made to adhere to SOLID principles of single responsibility, etc.
