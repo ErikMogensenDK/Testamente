@@ -10,7 +10,7 @@ namespace Testamente.Web.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
+//[Authorize]
 public class PersonController: ControllerBase
 {
     private readonly IPersonService _service;

@@ -3,23 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.Domain", "Testamente.Domain\Testamente.Domain.csproj", "{CAAA4BD8-099A-40B7-9A43-F15915F8EE8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.Domain", "Testamente.Domain\Testamente.Domain.csproj", "{CAAA4BD8-099A-40B7-9A43-F15915F8EE8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.DomainTests", "Testamente.DomainTests\Testamente.DomainTests.csproj", "{8FCD8991-66A3-4498-9E8D-0DD7E35D0612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.DomainTests", "Testamente.DomainTests\Testamente.DomainTests.csproj", "{8FCD8991-66A3-4498-9E8D-0DD7E35D0612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.DataAccess", "Testamente.DataAccess\Testamente.DataAccess.csproj", "{4A50322E-F917-4F1C-A858-B574FE2E34DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.DataAccess", "Testamente.DataAccess\Testamente.DataAccess.csproj", "{4A50322E-F917-4F1C-A858-B574FE2E34DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.DataAccessTests", "Testamente.DataAccessTests\Testamente.DataAccessTests.csproj", "{DABE57D2-71BB-4753-9F42-110928899F95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.DataAccessTests", "Testamente.DataAccessTests\Testamente.DataAccessTests.csproj", "{DABE57D2-71BB-4753-9F42-110928899F95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.Query", "Testamente.Query\Testamente.Query.csproj", "{C8720F61-0CEB-440A-A21A-3961BF5865B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.Query", "Testamente.Query\Testamente.Query.csproj", "{C8720F61-0CEB-440A-A21A-3961BF5865B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.QueryTests", "Testamente.QueryTests\Testamente.QueryTests.csproj", "{1666E9B1-3196-4E4F-912D-725CDA671A3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.QueryTests", "Testamente.QueryTests\Testamente.QueryTests.csproj", "{1666E9B1-3196-4E4F-912D-725CDA671A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.App", "Testamente.App\Testamente.App.csproj", "{B58FA5CD-47D7-476F-AD54-B6F152EDED45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.App", "Testamente.App\Testamente.App.csproj", "{B58FA5CD-47D7-476F-AD54-B6F152EDED45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.AppTests", "Testamente.AppTests\Testamente.AppTests.csproj", "{A022FFAD-668B-4107-8550-821E4B523B76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.AppTests", "Testamente.AppTests\Testamente.AppTests.csproj", "{A022FFAD-668B-4107-8550-821E4B523B76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testamente.Web", "Testamente.Web\Testamente.Web.csproj", "{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testamente.Web", "Testamente.Web\Testamente.Web.csproj", "{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7461AA6F-B65F-4443-8A05-0744FD6AE8D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7461AA6F-B65F-4443-8A05-0744FD6AE8D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7461AA6F-B65F-4443-8A05-0744FD6AE8D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7461AA6F-B65F-4443-8A05-0744FD6AE8D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CAAA4BD8-099A-40B7-9A43-F15915F8EE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CAAA4BD8-099A-40B7-9A43-F15915F8EE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAAA4BD8-099A-40B7-9A43-F15915F8EE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,14 +59,14 @@ Global
 		{A022FFAD-668B-4107-8550-821E4B523B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A022FFAD-668B-4107-8550-821E4B523B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A022FFAD-668B-4107-8550-821E4B523B76}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF7497F1-CB60-489C-BDE5-109F1AB951A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF7497F1-CB60-489C-BDE5-109F1AB951A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF7497F1-CB60-489C-BDE5-109F1AB951A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF7497F1-CB60-489C-BDE5-109F1AB951A3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57F81BF2-2DFF-4663-B794-4B3575C0B8B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAAEA5D-FC8D-4C3B-A1D5-00CA418795D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAAEA5D-FC8D-4C3B-A1D5-00CA418795D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAAEA5D-FC8D-4C3B-A1D5-00CA418795D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAAEA5D-FC8D-4C3B-A1D5-00CA418795D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

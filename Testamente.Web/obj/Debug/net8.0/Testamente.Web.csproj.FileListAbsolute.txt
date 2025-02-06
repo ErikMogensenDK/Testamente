@@ -194,3 +194,16 @@ C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extens
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Namotion.Reflection.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NJsonSchema.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NJsonSchema.Annotations.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NJsonSchema.NewtonsoftJson.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NJsonSchema.Yaml.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.Annotations.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.AspNetCore.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.Core.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.Core.Yaml.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.Generation.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.Generation.AspNetCore.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\YamlDotNet.dll

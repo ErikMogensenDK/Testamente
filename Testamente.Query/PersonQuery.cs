@@ -14,7 +14,7 @@ public class PersonQuery: IPersonQuery
 
 	public PersonQueryDto? Get(Guid id)
 	{
-		var sql = CreateGetSql(id);
+		var sql = CreateBasicGetSql(id);
 		IEnumerable<PersonRowDto> queryResults = new List<PersonRowDto>();
 		using (var conn = _connProvider.Get())
 		{
@@ -39,11 +39,20 @@ public class PersonQuery: IPersonQuery
 		return dto;
 	}
 
-	private string CreateGetSql(Guid id)
+	private string CreateBasicGetSql(Guid id)
 	{
 		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where IsDeleted = 'FALSE' AND PersonEntityId = '{id}'";
-		//return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive from People where IsDeleted = 'FALSE' AND PersonEntityId = '{id}'";
 	}
+
+	// public async List<PersonQueryDto?> GetPeopleAssociatedWithUserAsync(Guid id)
+	// {
+	// 	string query = CreateGetAssociatedPeopleQuery(id);
+	// 	var myList = new List<PersonQueryDto>();
+	// }
+
+	// private string CreateGetAssociatedPeopleQuery(Guid id)
+	// {
+	// }
 }
 
 public interface IPersonQuery
