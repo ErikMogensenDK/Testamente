@@ -44,15 +44,6 @@ public class PersonQuery: IPersonQuery
 		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where IsDeleted = 'FALSE' AND PersonEntityId = '{id}'";
 	}
 
-	// public async List<PersonQueryDto?> GetPeopleAssociatedWithUserAsync(Guid id)
-	// {
-	// 	string query = CreateGetAssociatedPeopleQuery(id);
-	// 	var myList = new List<PersonQueryDto>();
-	// }
-
-	// private string CreateGetAssociatedPeopleQuery(Guid id)
-	// {
-	// }
 }
 
 public interface IPersonQuery
