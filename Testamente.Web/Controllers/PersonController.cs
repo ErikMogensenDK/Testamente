@@ -56,6 +56,12 @@ public class PersonController: ControllerBase
         var result = _service.DeleteAsync(id);
         return Ok();
     }
+    [HttpGet("{UserId}")]
+    public async Task<ActionResult<List<PersonQueryDto>>> GetAllAssociatedPeople([FromRoute]Guid id)
+    {
+        var result = _query.GetAllPeopleAssociatedWithUserId(id);
+        return Ok(result);
+    }
 
     [HttpGet("me")]
     public async Task<IActionResult> GetCurrentUser()

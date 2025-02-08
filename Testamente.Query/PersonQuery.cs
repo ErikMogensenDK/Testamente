@@ -1,12 +1,12 @@
 namespace Testamente.Query;
 
-public class PersonQuery: IPersonQuery
+public class GetAllPeopleAssocaitedWithUserId: IPersonQuery
 {
 	private static readonly int _maxTextChars = 10;
 	private readonly IDbConnectionProvider _connProvider;
 	private readonly IQueryExecutor _exe;
 
-	public PersonQuery(IDbConnectionProvider connProvider, IQueryExecutor exe)
+	public GetAllPeopleAssocaitedWithUserId(IDbConnectionProvider connProvider, IQueryExecutor exe)
 	{
 		_connProvider = connProvider;
 		_exe = exe;
@@ -25,6 +25,12 @@ public class PersonQuery: IPersonQuery
 		if (match == null)
 			return null;
 
+		PersonQueryDto dto = MapQueryDtoToRowDto(match);
+		return dto;
+	}
+
+    private PersonQueryDto MapQueryDtoToRowDto(PersonRowDto match)
+    {
 		var dto = new PersonQueryDto
 		{
 			Id = match.Id,
@@ -37,18 +43,40 @@ public class PersonQuery: IPersonQuery
 			SpouseId= match.SpouseId
 		};
 		return dto;
+    }
+
+    public List<PersonQueryDto> GetAllPeopleAssociatedWithUserId(Guid id)
+	{
+		string query = CreateGetSqlForAssociatedUsers(id);
+
+		IEnumerable<PersonRowDto> queryResults = new List<PersonRowDto>();
+		using (var conn = _connProvider.Get())
+		{
+			queryResults = _exe.Query<PersonRowDto>(conn, query);
+		}
+
+		if (queryResults != null)
+			return null;
+
+		List<PersonQueryDto> listToReturn = new();
+		foreach(var match in queryResults)
+		{
+			var dto = MapQueryDtoToRowDto(match);
+			listToReturn.Add(dto);
+		}
+		return listToReturn;
 	}
 
-	private string CreateBasicGetSql(Guid id)
+    private string CreateGetSqlForAssociatedUsers(Guid id)
+    {
+		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where IsDeleted = 'FALSE' AND AssociatedUser = '{id}'";
+    }
+
+    private string CreateBasicGetSql(Guid id)
 	{
 		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where IsDeleted = 'FALSE' AND PersonEntityId = '{id}'";
 	}
 
-}
-
-public interface IPersonQuery
-{
-	PersonQueryDto? Get(Guid id);
 }
 
 public class PersonRowDto
@@ -61,4 +89,5 @@ public class PersonRowDto
 	public Guid? FatherId { get; set; }
 	public Guid? MotherId { get; set; }
 	public Guid? SpouseId { get; set; }
+	public Guid? CreatedByUserId { get; set; }
 }

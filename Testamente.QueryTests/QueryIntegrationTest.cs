@@ -29,7 +29,7 @@ public class QueryIntegrationTest
         var exe = new Mock<IQueryExecutor>();
         exe.Setup(e => e.Query<PersonRowDto>(conn, sql, null,null,true,null,null))
         .Returns(new List<PersonRowDto>{inputRowDto});
-        var q = new PersonQuery(connProvider.Object, exe.Object);
+        var q = new GetAllPeopleAssocaitedWithUserId(connProvider.Object, exe.Object);
 
         var PersonDtoFromDb = q.Get(id);
 
