@@ -18,4 +18,5 @@ public class PersonEntity
     public PersonEntity? Spouse { get; set; }
 
     public bool IsDeleted { get; set; } = false;
+    public Guid UserId { get; set; }
 }
