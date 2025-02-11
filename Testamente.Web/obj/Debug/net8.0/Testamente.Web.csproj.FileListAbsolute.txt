@@ -207,3 +207,6 @@ C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.Core.Yaml.
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.Generation.dll
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\NSwag.Generation.AspNetCore.dll
 C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\YamlDotNet.dll
+C:\Users\erikm\repos\Testamente\Testamente.Web\bin\Debug\net8.0\Testamente.Web.staticwebassets.endpoints.json
+C:\Users\erikm\repos\Testamente\Testamente.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\erikm\repos\Testamente\Testamente.Web\obj\Debug\net8.0\staticwebassets\msbuild.Testamente.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

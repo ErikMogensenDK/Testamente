@@ -44,19 +44,19 @@ public class PersonController: ControllerBase
     }
 
     [HttpPut("{id}")]
-    public ActionResult<PersonQueryDto> Update([FromRoute]Guid id, [FromBody]CreatePersonRequest request)
+    public async Task<IActionResult> Update([FromRoute]Guid id, [FromBody]CreatePersonRequest request)
     {
-        var result = _service.UpdateAsync(id, request);
+        await _service.UpdateAsync(id, request);
         return Ok();
     }
 
     [HttpDelete("{id}")]
-    public ActionResult<PersonQueryDto> Delete([FromRoute]Guid id)
+    public async Task<IActionResult> Delete([FromRoute]Guid id)
     {
-        var result = _service.DeleteAsync(id);
+        await _service.DeleteAsync(id);
         return Ok();
     }
-    [HttpGet("{UserId}")]
+    [HttpGet("/ByCreatedBy/{UserId}")]
     public async Task<ActionResult<List<PersonQueryDto>>> GetAllAssociatedPeople([FromRoute]Guid id)
     {
         var result = _query.GetAllPeopleAssociatedWithUserId(id);

@@ -6344,11 +6344,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erikm\\repos\\Testamente\\testamente.web\\Testamente.Web.csproj",
+      "projectUniqueName": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Testamente.Web.csproj",
       "projectName": "Testamente.Web",
-      "projectPath": "C:\\Users\\erikm\\repos\\Testamente\\testamente.web\\Testamente.Web.csproj",
+      "projectPath": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\Testamente.Web.csproj",
       "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erikm\\repos\\Testamente\\testamente.web\\obj\\",
+      "outputPath": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6387,7 +6387,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -6445,6 +6446,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.12, 8.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.12, 8.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.12, 8.0.12]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.12, 8.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6453,20 +6472,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Microsoft.AspNetCore.Identity 2.3.0 depends on Microsoft.Extensions.Identity.Core (>= 2.3.0) but Microsoft.Extensions.Identity.Core 2.3.0 was not found. An approximate best match of Microsoft.Extensions.Identity.Core 3.0.0 was resolved.",
-      "libraryId": "Microsoft.Extensions.Identity.Core",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }
