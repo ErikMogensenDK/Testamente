@@ -28,7 +28,7 @@ services.AddDbContext<IdentityContext>(options =>
 });
 services.AddScoped<IDbConnectionProvider> (p => new DbConnectionProvider(connStr));
 services.AddScoped<IQueryExecutor, QueryExecutor>();
-services.AddScoped<IPersonQuery, GetAllPeopleAssocaitedWithUserId>();
+services.AddScoped<IPersonQuery, PersonQuery>();
 services.AddScoped<IPersonRepository, PersonRepository>();
 services.AddScoped<IPersonService, PersonService>();
 services.AddScoped<IdentityContext>();

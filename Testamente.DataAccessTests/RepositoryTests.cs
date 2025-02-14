@@ -40,11 +40,7 @@ public class RepositoryTests
 
         await repo.DeleteAsync(father.PersonId);
         await repo.DeleteAsync(d.PersonId);
-        Assert.AreEqual(2, context.People.Count());
-        foreach(var p in context.People)
-        {
-            Assert.IsTrue(p.IsDeleted);
-        }
+        Assert.AreEqual(0, context.People.Count());
     }
 
     [TestMethod]

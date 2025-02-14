@@ -1449,7 +1449,8 @@
       },
       "Testamente.App/1.0.0": {
         "dependencies": {
-          "Testamente.Domain": "1.0.0"
+          "Testamente.Domain": "1.0.0",
+          "Testamente.Query": "1.0.0"
         },
         "runtime": {
           "Testamente.App.dll": {

@@ -31,6 +31,9 @@
             "projectReferences": {
               "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Domain\\Testamente.Domain.csproj": {
                 "projectPath": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Domain\\Testamente.Domain.csproj"
+              },
+              "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Query\\Testamente.Query.csproj": {
+                "projectPath": "C:\\Users\\erikm\\repos\\Testamente\\Testamente.Query\\Testamente.Query.csproj"
               }
             }
           }

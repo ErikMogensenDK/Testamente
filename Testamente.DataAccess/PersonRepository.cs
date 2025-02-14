@@ -17,10 +17,7 @@ public class PersonRepository: IPersonRepository
 		var entity = _context.People.SingleOrDefault(e => e.PersonEntityId == id);
 		if (entity != null)
 		{
-			entity.IsDeleted = true;
-			var entry = _context.Entry(entity);
-			entry.State = EntityState.Modified;
-			entry.Property(e => e.IsDeleted).IsModified = true;
+			_context.People.Remove(entity);
 			await _context.SaveChangesAsync();
 		}
 		else

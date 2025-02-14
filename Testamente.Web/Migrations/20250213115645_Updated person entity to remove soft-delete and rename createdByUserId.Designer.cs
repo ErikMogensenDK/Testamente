@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Testamente.DataAccess;
 
@@ -11,9 +12,11 @@ using Testamente.DataAccess;
 namespace Testamente.Web.Migrations
 {
     [DbContext(typeof(TestamenteContext))]
-    partial class TestamenteContextModelSnapshot : ModelSnapshot
+    [Migration("20250213115645_Updated person entity to remove soft-delete and rename createdByUserId")]
+    partial class UpdatedpersonentitytoremovesoftdeleteandrenamecreatedByUserId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

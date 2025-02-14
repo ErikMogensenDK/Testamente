@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Testamente.Domain\Testamente.Domain.csproj" />
+    <ProjectReference Include="..\Testamente.Query\Testamente.Query.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

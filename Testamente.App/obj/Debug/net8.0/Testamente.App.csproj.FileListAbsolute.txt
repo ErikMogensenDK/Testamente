@@ -14,3 +14,7 @@ C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.d
 C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\refint\Testamente.App.dll
 C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\Testamente.App.pdb
 C:\Users\erikm\repos\Testamente\Testamente.App\obj\Debug\net8.0\ref\Testamente.App.dll
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.DataAccess.dll
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.Query.dll
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.Query.pdb
+C:\Users\erikm\repos\Testamente\Testamente.App\bin\Debug\net8.0\Testamente.DataAccess.pdb

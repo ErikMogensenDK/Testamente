@@ -1,12 +1,12 @@
 namespace Testamente.Query;
 
-public class GetAllPeopleAssocaitedWithUserId: IPersonQuery
+public class PersonQuery: IPersonQuery
 {
 	private static readonly int _maxTextChars = 10;
 	private readonly IDbConnectionProvider _connProvider;
 	private readonly IQueryExecutor _exe;
 
-	public GetAllPeopleAssocaitedWithUserId(IDbConnectionProvider connProvider, IQueryExecutor exe)
+	public PersonQuery(IDbConnectionProvider connProvider, IQueryExecutor exe)
 	{
 		_connProvider = connProvider;
 		_exe = exe;
@@ -55,7 +55,7 @@ public class GetAllPeopleAssocaitedWithUserId: IPersonQuery
 			queryResults = _exe.Query<PersonRowDto>(conn, query);
 		}
 
-		if (queryResults != null)
+		if (queryResults == null)
 			return null;
 
 		List<PersonQueryDto> listToReturn = new();
@@ -69,12 +69,12 @@ public class GetAllPeopleAssocaitedWithUserId: IPersonQuery
 
     private string CreateGetSqlForAssociatedUsers(Guid id)
     {
-		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where IsDeleted = 'FALSE' AND AssociatedUser = '{id}'";
+		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where AssociatedUser = '{id}'";
     }
 
     private string CreateBasicGetSql(Guid id)
 	{
-		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where IsDeleted = 'FALSE' AND PersonEntityId = '{id}'";
+		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where PersonEntityId = '{id}'";
 	}
 
 }
