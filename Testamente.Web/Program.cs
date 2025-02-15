@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Testamente.Web;
 using Testamente.Web.Identity;
 using System.Security.Claims;
+using Testamente.App;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -26,11 +27,12 @@ services.AddDbContext<IdentityContext>(options =>
 {
     options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web"));
 });
-services.AddScoped<IDbConnectionProvider> (p => new DbConnectionProvider(connStr));
-services.AddScoped<IQueryExecutor, QueryExecutor>();
-services.AddScoped<IPersonQuery, PersonQuery>();
-services.AddScoped<IPersonRepository, PersonRepository>();
-services.AddScoped<IPersonService, PersonService>();
+services.AddSingleton<IDbConnectionProvider> (p => new DbConnectionProvider(connStr));
+services.AddSingleton<IQueryExecutor, QueryExecutor>();
+services.AddSingleton<IPersonQuery, PersonQuery>();
+services.AddSingleton<IPersonRepository, PersonRepository>();
+services.AddTransient<IPersonService, PersonService>();
+services.AddScoped<InheritanceCalculator>();
 services.AddScoped<IdentityContext>();
 SqlMapper.AddTypeHandler(new SqlDateOnlyTypeHandler());
 services.AddAuthorization();
