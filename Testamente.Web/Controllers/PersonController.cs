@@ -1,8 +1,10 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Testamente.App;
 using Testamente.App.Models;
 using Testamente.App.Services;
+using Testamente.Domain;
 using Testamente.Query;
 using Testamente.Web.Identity;
 
@@ -16,8 +18,9 @@ public class PersonController: ControllerBase
     private readonly IPersonService _service;
     private readonly IPersonQuery _query;
     private readonly IdentityContext _context;
+    private readonly InheritanceCalculator _calculator;
 
-    public PersonController(IPersonService service, IPersonQuery query, IdentityContext context)
+    public PersonController(IPersonService service, IPersonQuery query, IdentityContext context, InheritanceCalculator calculator)
     {
         _service = service;
         _query = query;
@@ -62,25 +65,11 @@ public class PersonController: ControllerBase
         var result = _query.GetAllPeopleAssociatedWithUserId(id);
         return Ok(result);
     }
-
-    [HttpGet("me")]
-    public async Task<IActionResult> GetCurrentUser()
+    [HttpGet("CalculateInheritanceForPersonWithGuid")]
+    public async Task<ActionResult<Dictionary<Person, double>>> CalculateInheritanceForPerson(Guid id)
     {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-        if (string.IsNullOrEmpty(userId))
-        {
-            return Unauthorized();
-        }
-
-        var user = await _context.Users.FindAsync(userId);
-
-        if (user == null)
-        {
-            return NotFound();
-        }
-
-        return Ok(user);
+        Person person = await _service.GetAndAssociateUsersCreatedByAsync(id);
+        Dictionary<Person, double> inheritanceDict = _calculator.CalculateInheritance(1, person);
+        return Ok(inheritanceDict);
     }
-
 }

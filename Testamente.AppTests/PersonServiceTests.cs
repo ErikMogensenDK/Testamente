@@ -126,7 +126,7 @@ public class PersonServiceTests
 		PersonService service = new(repo.Object, query.Object);
 
 		//act
-		var actualPerson = await service.GetAndAssociateUsersCreatedBy(userGuid);
+		var actualPerson = await service.GetAndAssociateUsersCreatedByAsync(userGuid);
 
 		//Assert
 		//Check first child

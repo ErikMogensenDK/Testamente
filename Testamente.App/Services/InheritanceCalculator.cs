@@ -5,7 +5,6 @@ public class InheritanceCalculator
 {
 	public InheritanceCalculator()
 	{
-		
 	}
 
 	public Dictionary<Person, double> CalculateInheritance(double inheritance, Person testator)

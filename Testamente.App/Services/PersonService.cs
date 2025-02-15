@@ -55,7 +55,7 @@ public class PersonService : IPersonService
         await _repo.SaveUpdateAsync(person);
     }
 
-    public async Task<Person> GetAndAssociateUsersCreatedBy(Guid id)
+    public async Task<Person> GetAndAssociateUsersCreatedByAsync(Guid id)
     {
         var dtos = _query.GetAllPeopleAssociatedWithUserId(id);
         List<Person> people = new();
