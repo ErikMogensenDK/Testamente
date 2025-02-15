@@ -25,9 +25,12 @@ public class PersonService : IPersonService
             Name = request.Name,
             BirthDate = request.BirthDate,
             Address = request.Address,
-            IsAlive = request.IsAlive
+            IsAlive = request.IsAlive,
+            Mother = request.MotherId.HasValue ? new() { PersonId = request.MotherId.Value } : null,
+            Father = request.FatherId.HasValue ? new() { PersonId = request.FatherId.Value } : null,
+            Spouse = request.SpouseId.HasValue ? new() { PersonId = request.SpouseId.Value } : null,
         };
-        await _repo.SaveCreateAsync(person);
+        await _repo.SaveCreateAsync(person, request.CreatedById);
     }
 
     public async Task DeleteAsync(Guid id)

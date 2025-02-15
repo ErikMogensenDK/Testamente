@@ -13,18 +13,20 @@ public class PersonServiceTests
 	public async Task TestCreate_usesRepoAsExpected()
 	{
 		//send opret request
+		var createdById= Guid.NewGuid();
 		var request = new CreatePersonRequest 
 		{
 			Name= "TestName ",
 			Address = "some addresss",
 			IsAlive = false,
 			BirthDate = new(1985, 6, 3),
+			CreatedById= createdById
 		};
 		//se at der bliver gemt det rigtige domæne object
 		var repo = new Mock<IPersonRepository>();
 		Person saved = null;
-		repo.Setup(r => r.SaveCreateAsync(It.IsAny<Person>()))
-		.Callback<Person>(p => saved = p);
+		repo.Setup(r => r.SaveCreateAsync(It.IsAny<Person>(), It.Is<Guid>(g => g == createdById)))
+		.Callback((Person p, Guid id) => saved = p);
 
 		var query = new Mock<IPersonQuery>();
 
@@ -43,19 +45,21 @@ public class PersonServiceTests
 	public async Task TestDelete_RemovesObjectAsExpected()
 	{
 		//send opret request
+		var createdById= Guid.NewGuid();
 		var request = new CreatePersonRequest 
 		{
 			Name= "TestName ",
 			Address = "some addresss",
 			IsAlive = false,
 			BirthDate = new(1985, 6, 3),
+			CreatedById = createdById
 		};
 		var id = Guid.NewGuid();
 		//se at der bliver gemt det rigtige domæne object
 		var repo = new Mock<IPersonRepository>();
 		Person saved = null;
-		repo.Setup(r => r.SaveCreateAsync(It.IsAny<Person>()))
-		.Callback<Person>(p => saved = p);
+		repo.Setup(r => r.SaveCreateAsync(It.IsAny<Person>(), It.Is<Guid>(g => g == createdById)))
+		.Callback((Person p, Guid id) => saved = p);
 
 		var query = new Mock<IPersonQuery>();
 

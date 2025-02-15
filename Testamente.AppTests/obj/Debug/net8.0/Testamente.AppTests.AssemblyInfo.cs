@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Testamente.AppTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a497c023e129f0b7f141d3916dcaa19f3ac33a86")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e00241e58f06d457e75e79e642b7b203d2f0ed7f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Testamente.AppTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Testamente.AppTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

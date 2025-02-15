@@ -24,11 +24,11 @@ public class PersonRepository: IPersonRepository
 			throw new KeyNotFoundException("Could not locate id to delete in db");
     }
 
-    public async Task SaveCreateAsync(Person person)
+    public async Task SaveCreateAsync(Person person, Guid createdById)
     {
 		if (person == null)
 			throw new ArgumentNullException(nameof(person));
-		var dbEntity = MapObjectToEntity(person);
+		var dbEntity = MapObjectToEntity(person, createdById);
 		_context.People.Add(dbEntity);
 		
 		await _context.SaveChangesAsync();
@@ -42,7 +42,7 @@ public class PersonRepository: IPersonRepository
 		var entity = _context.People.SingleOrDefault(e => e.PersonEntityId == person.PersonId);
 		if (entity != null)
 		{
-			var dbEntity = MapObjectToEntity(person);
+			var dbEntity = MapObjectToEntity(person, entity.CreatedById);
 			_context.Entry(entity).CurrentValues.SetValues(dbEntity);
 			await _context.SaveChangesAsync();
 		}
@@ -50,7 +50,7 @@ public class PersonRepository: IPersonRepository
 			throw new KeyNotFoundException("Could not locate id to update in db");
     }
 
-	private PersonEntity MapObjectToEntity(Person person)
+	private PersonEntity MapObjectToEntity(Person person, Guid createdById)
 	{
 		var dbEntity = new PersonEntity
 		{
@@ -59,9 +59,10 @@ public class PersonRepository: IPersonRepository
 			BirthDate = person.BirthDate,
 			Address = person.Address,
 			IsAlive = person.IsAlive,
-			// MotherId = person.Mother?.PersonId,
-			// FatherId = person.Father?.PersonId,
-			// SpouseId = person.Spouse?.PersonId
+			MotherId = person.Mother?.PersonId,
+			FatherId = person.Father?.PersonId,
+			SpouseId = person.Spouse?.PersonId,
+			CreatedById = createdById
 		};
 		return dbEntity;
 	}

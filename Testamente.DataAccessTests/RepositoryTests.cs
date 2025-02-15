@@ -14,7 +14,7 @@ public class RepositoryTests
         var repo = new PersonRepository(context);
         var father = new Person(){PersonId=Guid.NewGuid(), Name="Father", Address="AddressTwo", BirthDate = new(1980,1,1), IsAlive=true};
         var d = new Person(){PersonId=Guid.NewGuid(), Name="TestName", Address="Address", BirthDate = new(1996,3,6), IsAlive=true, Father=father};
-        await repo.SaveCreateAsync(d);
+        await repo.SaveCreateAsync(d, d.PersonId);
 
         var saved = context.People.Single(p => p.PersonEntityId== d.PersonId);
         Assert.AreEqual(d.Name, saved.Name);
@@ -29,8 +29,8 @@ public class RepositoryTests
         var repo = new PersonRepository(context);
         var father = new Person(){PersonId=Guid.NewGuid(), Name="Father", Address="AddressTwo", BirthDate = new(1980,1,1), IsAlive=true};
         var d = new Person(){PersonId=Guid.NewGuid(), Name="TestName", Address="Address", BirthDate = new(1996,3,6), IsAlive=true, Father=father};
-        await repo.SaveCreateAsync(father);
-        await repo.SaveCreateAsync(d);
+        await repo.SaveCreateAsync(father, d.PersonId);
+        await repo.SaveCreateAsync(d, d.PersonId);
 
         var saved = context.People.Single(p => p.PersonEntityId== d.PersonId);
         Assert.AreEqual(d.Name, saved.Name);
