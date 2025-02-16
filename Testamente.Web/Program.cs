@@ -23,25 +23,20 @@ services.AddDbContext<TestamenteContext>(options =>
 {
     options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web"));
 });
-services.AddDbContext<IdentityContext>(options =>
-{
-    options.UseSqlServer(connStr, b => b.MigrationsAssembly("Testamente.Web"));
-});
-services.AddSingleton<IDbConnectionProvider> (p => new DbConnectionProvider(connStr));
-services.AddSingleton<IQueryExecutor, QueryExecutor>();
-services.AddSingleton<IPersonQuery, PersonQuery>();
-services.AddSingleton<IPersonRepository, PersonRepository>();
+services.AddTransient<IDbConnectionProvider> (p => new DbConnectionProvider(connStr));
+services.AddTransient<IQueryExecutor, QueryExecutor>();
+services.AddTransient<IPersonQuery, PersonQuery>();
+services.AddTransient<IPersonRepository, PersonRepository>();
 services.AddTransient<IPersonService, PersonService>();
-services.AddScoped<InheritanceCalculator>();
-services.AddScoped<IdentityContext>();
+services.AddTransient<IInheritanceCalculator, InheritanceCalculator>();
 SqlMapper.AddTypeHandler(new SqlDateOnlyTypeHandler());
-services.AddAuthorization();
+// services.AddAuthorization();
 //services.AddAuthentication().AddBearerToken(IdentityConstants.ApplicationScheme);
 //services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
-services.AddAuthentication().AddCookie("Identity.Bearer");
-services.AddIdentityCore<User>()
-    .AddEntityFrameworkStores<IdentityContext>()
-    .AddApiEndpoints();
+// services.AddAuthentication().AddCookie("Identity.Bearer");
+// services.AddIdentityCore<User>()
+//     .AddEntityFrameworkStores<IdentityContext>()
+//     .AddApiEndpoints();
 services.AddOpenApiDocument();
 
 var app = builder.Build();
@@ -53,15 +48,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("users/me", async (ClaimsPrincipal claims, IdentityContext context) => 
-{
-    string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+// app.MapGet("users/me", async (ClaimsPrincipal claims, IdentityContext context) => 
+// {
+//     string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
-    return await context.Users.FindAsync(userId);
-})
-.RequireAuthorization();
+//     return await context.Users.FindAsync(userId);
+// })
+// .RequireAuthorization();
 
-app.MapIdentityApi<User>();
+// app.MapIdentityApi<User>();
 app.UseHttpsRedirection();
 
 app.MapControllers();

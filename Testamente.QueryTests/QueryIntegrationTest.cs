@@ -50,7 +50,7 @@ public class QueryIntegrationTest
     public async Task GetAssociatedPeople_GetsExpectedObjects()
     {
         var id = Guid.NewGuid();
-        var sql = $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where AssociatedUser = '{id}'";
+        var sql = $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where CreatedById = '{id}'";
         var inputRowDto = new PersonRowDto
         {
             Id = Guid.NewGuid(),

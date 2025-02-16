@@ -69,7 +69,7 @@ public class PersonQuery: IPersonQuery
 
     private string CreateGetSqlForAssociatedUsers(Guid id)
     {
-		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where AssociatedUser = '{id}'";
+		return $"select PersonEntityId as id, Name, CAST(BirthDate AS DATE) BirthDate, Address, IsAlive, FatherId, MotherId, SpouseId from People where CreatedById = '{id}'";
     }
 
     private string CreateBasicGetSql(Guid id)

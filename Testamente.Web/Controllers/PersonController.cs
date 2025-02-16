@@ -17,14 +17,15 @@ public class PersonController: ControllerBase
 {
     private readonly IPersonService _service;
     private readonly IPersonQuery _query;
-    private readonly IdentityContext _context;
-    private readonly InheritanceCalculator _calculator;
+    // private readonly IdentityContext _context;
+    private readonly IInheritanceCalculator _calculator;
 
-    public PersonController(IPersonService service, IPersonQuery query, IdentityContext context, InheritanceCalculator calculator)
+    public PersonController(IPersonService service, IPersonQuery query, IInheritanceCalculator calculator)
     {
         _service = service;
         _query = query;
-        _context = context;
+        // _context = context;
+        _calculator = calculator;
     }
 
     [HttpPost("{id}")]
@@ -59,17 +60,28 @@ public class PersonController: ControllerBase
         await _service.DeleteAsync(id);
         return Ok();
     }
-    [HttpGet("/ByCreatedBy/{UserId}")]
+    [HttpGet("ByCreatedBy/{id}")]
     public async Task<ActionResult<List<PersonQueryDto>>> GetAllAssociatedPeople([FromRoute]Guid id)
     {
         var result = _query.GetAllPeopleAssociatedWithUserId(id);
         return Ok(result);
     }
-    [HttpGet("CalculateInheritanceForPersonWithGuid")]
-    public async Task<ActionResult<Dictionary<Person, double>>> CalculateInheritanceForPerson(Guid id)
+    [HttpGet("CalculateInheritanceForPersonWithGuid/{id}")]
+    public async Task<ActionResult<Dictionary<Person, double>>> CalculateInheritanceForPerson([FromRoute] Guid id)
     {
         Person person = await _service.GetAndAssociateUsersCreatedByAsync(id);
         Dictionary<Person, double> inheritanceDict = _calculator.CalculateInheritance(1, person);
-        return Ok(inheritanceDict);
+        Dictionary<Guid, double> inheritanceDictToReturn = MapDictToGuid(inheritanceDict);
+        return Ok(inheritanceDictToReturn);
+    }
+
+    private Dictionary<Guid, double> MapDictToGuid(Dictionary<Person, double> inheritanceDict)
+    {
+        Dictionary<Guid, double> d = new();
+        foreach (var person in inheritanceDict.Keys)
+        {
+            d[person.PersonId] = inheritanceDict[person];
+        }
+        return d;
     }
 }

@@ -9,5 +9,5 @@ public class CreatePersonRequest
     public Guid? MotherId { get; set; }
     public Guid? FatherId { get; set; }
     public Guid? SpouseId { get; set; }
-	public Guid CreatedById {get;set;}
+	public Guid CreatedById { get; set; }
 }

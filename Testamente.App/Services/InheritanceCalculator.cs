@@ -1,7 +1,7 @@
 using Testamente.Domain;
 namespace Testamente.App;
 
-public class InheritanceCalculator
+public class InheritanceCalculator: IInheritanceCalculator
 {
 	public InheritanceCalculator()
 	{
