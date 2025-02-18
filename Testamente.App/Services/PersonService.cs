@@ -58,6 +58,8 @@ public class PersonService : IPersonService
     public async Task<Person> GetAndAssociateUsersCreatedByAsync(Guid id)
     {
         var dtos = _query.GetAllPeopleAssociatedWithUserId(id);
+        if (dtos == null || dtos.Count <2)
+            return null;
         List<Person> people = new();
         foreach(var dto in dtos)
         {
@@ -65,6 +67,8 @@ public class PersonService : IPersonService
             people.Add(person);
         }
         var testatorDto = dtos.Where(p => p.Id == id).FirstOrDefault();
+        if (testatorDto == null)
+            return null;
 
         people = AssociateRelatedPeople(people, dtos);
         var testator = people.Where(p=>p.PersonId == testatorDto.Id).FirstOrDefault();

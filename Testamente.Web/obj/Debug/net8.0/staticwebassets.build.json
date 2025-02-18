@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "dC8Zhzb3bQVRAVh3M/w81NbA6Q0/4DI/lVw2K65QolI=",
+  "Hash": "HCFedGJmZm0tBDj5eyczBLNxalpHoxwCq1dOgLgO1lQ=",
   "Source": "Testamente.Web",
   "BasePath": "_content/Testamente.Web",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

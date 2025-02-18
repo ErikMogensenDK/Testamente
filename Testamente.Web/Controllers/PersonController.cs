@@ -70,6 +70,8 @@ public class PersonController: ControllerBase
     public async Task<ActionResult<Dictionary<Person, double>>> CalculateInheritanceForPerson([FromRoute] Guid id)
     {
         Person person = await _service.GetAndAssociateUsersCreatedByAsync(id);
+        if (person == null)
+            return NotFound();
         Dictionary<Person, double> inheritanceDict = _calculator.CalculateInheritance(1, person);
         Dictionary<Guid, double> inheritanceDictToReturn = MapDictToGuid(inheritanceDict);
         return Ok(inheritanceDictToReturn);
