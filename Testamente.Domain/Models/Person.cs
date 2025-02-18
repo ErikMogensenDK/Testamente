@@ -8,9 +8,9 @@ public class Person
 	public string Address { get; set; }
 	public bool IsAlive { get; set; } = true;
 	public List<Person> Children { get; set; }
-	public Person Spouse { get; set; }
-	public Person Father { get; set; }
-	public Person Mother { get; set; }
+	public Person? Spouse { get; set; }
+	public Person? Father { get; set; }
+	public Person? Mother { get; set; }
 
 	public Person()
 	{

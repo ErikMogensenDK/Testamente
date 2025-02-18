@@ -38,6 +38,12 @@ public class PersonRepository: IPersonRepository
     {
 		if (person == null)
 			throw new ArgumentNullException(nameof(person));
+		if (person.Father?.PersonId == Guid.NewGuid())
+			person.Father = null;
+		if (person.Mother?.PersonId == Guid.NewGuid())
+			person.Mother = null;
+		if (person.Spouse?.PersonId == Guid.NewGuid())
+			person.Spouse = null;
 
 		var entity = _context.People.SingleOrDefault(e => e.PersonEntityId == person.PersonId);
 		if (entity != null)

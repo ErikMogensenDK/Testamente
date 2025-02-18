@@ -50,7 +50,10 @@ public class PersonService : IPersonService
             Name = request.Name,
             BirthDate = request.BirthDate,
             Address = request.Address,
-            IsAlive = request.IsAlive
+            IsAlive = request.IsAlive,
+            Father = request.FatherId != null ? new() { PersonId = (Guid)request.FatherId } : null,
+            Mother = request.MotherId != null ? new() { PersonId = (Guid)request.MotherId } : null,
+            Spouse = request.SpouseId != null ? new() { PersonId = (Guid)request.SpouseId } : null,
         };
         await _repo.SaveUpdateAsync(person);
     }
